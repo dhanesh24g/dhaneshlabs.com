@@ -139,6 +139,13 @@ body {
   align-items: center;
 }
 
+.nav-actions a[href^="https://apps.dhaneshlabs.com"]::after,
+.nav-actions a[href^="https://tools.dhaneshlabs.com"]::after {
+  content: " \2197";
+  font-size: 0.9em;
+  vertical-align: 0.02em;
+}
+
 .pill {
   background: var(--accent);
   border: 1px solid transparent;
