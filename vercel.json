@@ -23,22 +23,6 @@
       "dest": "/public/$1"
     },
     {
-      "src": "/apps",
-      "dest": "/apps/index.html"
-    },
-    {
-      "src": "/tools",
-      "dest": "/tools/index.html"
-    },
-    {
-      "src": "/content",
-      "dest": "/content/index.html"
-    },
-    {
-      "src": "/travel",
-      "dest": "/travel/index.html"
-    },
-    {
       "src": "/(.*)",
       "dest": "/index.js"
     }
