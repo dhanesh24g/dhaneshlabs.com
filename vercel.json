@@ -1,30 +1,27 @@
 {
-  "version": 2,
   "builds": [
-    {
-      "src": "index.js",
-      "use": "@vercel/node"
-    }
+    { "src": "**", "use": "@vercel/static" }
   ],
   "routes": [
+    { "handle": "filesystem" },
     {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/styles.css",
-      "dest": "/styles.css"
-    },
-    {
-      "src": "/script.js",
-      "dest": "/script.js"
-    },
-    {
-      "src": "/public/(.*)",
-      "dest": "/public/$1"
+      "src": "/(.*)",
+      "has": [{ "type": "host", "value": "apps.dhaneshlabs.com" }],
+      "dest": "/apps.html"
     },
     {
       "src": "/(.*)",
-      "dest": "/index.js"
-    }
+      "has": [{ "type": "host", "value": "tools.dhaneshlabs.com" }],
+      "dest": "/tools.html"
+    },
+    { "src": "/studio/?", "dest": "/studio.html" },
+    { "src": "/products/?", "dest": "/products.html" },
+    { "src": "/apps/?", "dest": "/apps.html" },
+    { "src": "/tools/?", "dest": "/tools.html" },
+    { "src": "/content/?", "dest": "/content.html" },
+    { "src": "/travel/?", "dest": "/travel.html" },
+    { "src": "/contact/?", "dest": "/contact.html" },
+    { "src": "/index.html", "dest": "/" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
