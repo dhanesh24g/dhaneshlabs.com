@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dhanesh Labs | Apps</title>
+  <meta name="description" content="Production-grade AI apps by Dhanesh Labs: agents, vision, realtime experiences, and ops baked in.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../public/assets/favicon.png">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="noise"></div><div class="glow glow-1"></div><div class="glow glow-2"></div>
+  <header class="nav">
+    <div class="brand"><img src="../public/assets/logo.png" alt="logo" class="logo"><div><span class="brand-name">Dhanesh Labs</span><span class="brand-tag">Code • Create • Wander</span></div></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="/apps">Apps</a>
+      <a href="/tools">Tools</a>
+      <a href="../content.html">Content</a>
+      <a href="../travel.html">Travel</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="pill ghost" href="https://apps.dhaneshlabs.com" target="_blank" rel="noreferrer">apps.dhaneshlabs.com</a>
+      <a class="pill" href="https://tools.dhaneshlabs.com" target="_blank" rel="noreferrer">tools.dhaneshlabs.com</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Product line</p>
+        <h1>AI apps that ship fast, run lean, and stay observable.</h1>
+        <p class="lede">Agentic workflows, realtime UX, and ops baked in. Built for production on Vercel with OpenAI, LangGraph, and telemetry out of the box.</p>
+        <div class="hero-cta">
+          <a class="pill" href="https://apps.dhaneshlabs.com" target="_blank">Open App Hub</a>
+          <a class="pill ghost" href="#cases">See case studies</a>
+        </div>
+        <div class="meta">
+          <div><span class="meta-label">Latency</span><span class="meta-value">Edge + streaming UIs</span></div>
+          <div><span class="meta-label">Reliability</span><span class="meta-value">Evals, tracing, red-team</span></div>
+          <div><span class="meta-label">Security</span><span class="meta-value">Guardrails + secret hygiene</span></div>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="panel glass">
+          <div class="panel-header"><span class="dot green"></span><span class="dot amber"></span><span class="dot red"></span><span class="panel-title">Live preview</span></div>
+          <div class="panel-body">
+            <div class="flow">
+              <div class="flow-node"><span class="node-title">Vision</span><span class="node-sub">Contextual UI hints</span></div>
+              <div class="flow-node"><span class="node-title">Agents</span><span class="node-sub">Multi-turn planners</span></div>
+              <div class="flow-node"><span class="node-title">Ops</span><span class="node-sub">Alerts + metrics</span></div>
+            </div>
+            <div class="status"><span class="status-label">Featured:</span><span class="status-pill">Autonomous Sprint Coach</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid" id="cases">
+      <div class="section-heading">
+        <p class="eyebrow">Case studies</p>
+        <h2>Recent launches</h2>
+      </div>
+      <div class="grid-cards">
+        <article class="card"><div class="card-top"><p class="card-label">Agent Ops</p><span class="pill mini">Edge</span></div><h3>Autonomous Sprint Coach</h3><p>Reads repos, drafts plans, critiques PRs. Streaming UI + safeguards.</p><div class="tags"><span>LangGraph</span><span>RAG</span><span>Tracing</span></div></article>
+        <article class="card"><div class="card-top"><p class="card-label">Vision</p><span class="pill mini">Realtime</span></div><h3>Visual Debugger</h3><p>Upload screenshots, get actionable steps, emit CLI patches.</p><div class="tags"><span>Vision</span><span>CLI</span><span>Edge</span></div></article>
+        <article class="card"><div class="card-top"><p class="card-label">Data</p><span class="pill mini">Playground</span></div><h3>Data Concierge</h3><p>Chat with structured + unstructured data, pre-wired eval hooks.</p><div class="tags"><span>CSV/JSON</span><span>RAG</span><span>Evals</span></div></article>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div><p class="eyebrow">Build with us</p><h2>Need a custom AI app?</h2><p class="hint">Spec, prototype, and ship in two-week sprints.</p></div>
+      <form class="cta-form" action="https://formspree.io/f/mwkgrvge" method="POST"><input type="email" name="email" placeholder="you@example.com" required><button type="submit">Request a sprint</button></form>
+    </section>
+  </main>
+</body>
+</html>
