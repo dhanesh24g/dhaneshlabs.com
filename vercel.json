@@ -7,13 +7,21 @@
     {
       "src": "/(.*)",
       "has": [{ "type": "host", "value": "apps.dhaneshlabs.com" }],
-      "dest": "/apps/$1"
+      "dest": "/apps.html"
     },
     {
       "src": "/(.*)",
       "has": [{ "type": "host", "value": "tools.dhaneshlabs.com" }],
-      "dest": "/tools/$1"
+      "dest": "/tools.html"
     },
+    { "src": "/studio/?", "dest": "/studio.html" },
+    { "src": "/products/?", "dest": "/products.html" },
+    { "src": "/apps/?", "dest": "/apps.html" },
+    { "src": "/tools/?", "dest": "/tools.html" },
+    { "src": "/content/?", "dest": "/content.html" },
+    { "src": "/travel/?", "dest": "/travel.html" },
+    { "src": "/contact/?", "dest": "/contact.html" },
+    { "src": "/index.html", "dest": "/" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }

@@ -1,27 +1,49 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dhanesh Labs | Apps</title>
-  <meta name="description" content="Production-grade AI apps by Dhanesh Labs: agents, vision, realtime experiences, and ops baked in.">
+  <meta name="description" content="Production-ready AI apps built by Dhanesh Labs for real-world deployment.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dhanesh Labs | Apps">
+  <meta property="og:description" content="Explore production-ready AI apps from Dhanesh Labs.">
+  <meta property="og:image" content="public/assets/logo.png">
+  <meta property="og:url" content="https://dhaneshlabs.com/apps">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dhanesh Labs | Apps">
+  <meta name="twitter:description" content="Explore production-ready AI apps from Dhanesh Labs.">
+  <meta name="twitter:image" content="public/assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="public/assets/favicon.png">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="public/assets/favicon.png">
 </head>
+
 <body>
-  <div class="noise"></div><div class="glow glow-1"></div><div class="glow glow-2"></div>
+  <div class="noise"></div>
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
   <header class="nav">
-    <div class="brand"><img src="public/assets/logo.png" alt="logo" class="logo"><div><span class="brand-name">Dhanesh Labs</span><span class="brand-tag">Code • Create • Wander</span></div></div>
+    <div class="brand">
+      <img src="public/assets/logo.png" alt="Dhanesh Labs logo" class="logo" />
+      <div>
+        <span class="brand-name">Dhanesh Labs</span>
+        <span class="brand-tag">Code • Create • Wander</span>
+      </div>
+    </div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="apps.html">Apps</a>
-      <a href="tools.html">Tools</a>
-      <a href="content.html">Content</a>
-      <a href="travel.html">Travel</a>
-      <a href="#contact">Contact</a>
+      <a href="/">Home</a>
+      <a href="/studio">Studio</a>
+      <a href="/products">Products</a>
+      <a class="active" href="https://apps.dhaneshlabs.com">Apps</a>
+      <a href="/content">Content</a>
+      <a href="/travel">Travel</a>
+      <a href="/contact">Contact</a>
     </nav>
     <div class="nav-actions">
       <a class="pill ghost" href="https://apps.dhaneshlabs.com" target="_blank" rel="noreferrer">Launch Apps</a>
@@ -30,52 +52,86 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" id="studio">
       <div class="hero-content">
-        <p class="eyebrow">Product line</p>
-        <h1>AI apps that ship fast, run lean, and stay observable.</h1>
-        <p class="lede">Agentic workflows, realtime UX, and ops baked in. Built for production on Vercel with OpenAI, LangGraph, and telemetry out of the box.</p>
+        <p class="eyebrow">Apps • Shipping • Production</p>
+        <h1>AI apps that are <span class="accent">ready for users</span></h1>
+        <p class="lede">These apps are built to move from prototype to production with observability, performance, and
+          reliability baked in from day one.</p>
         <div class="hero-cta">
-          <a class="pill" href="https://apps.dhaneshlabs.com" target="_blank">Open App Hub</a>
-          <a class="pill ghost" href="#cases">See case studies</a>
-        </div>
-        <div class="meta">
-          <div><span class="meta-label">Latency</span><span class="meta-value">Edge + streaming UIs</span></div>
-          <div><span class="meta-label">Reliability</span><span class="meta-value">Evals, tracing, red-team</span></div>
-          <div><span class="meta-label">Security</span><span class="meta-value">Guardrails + secret hygiene</span></div>
+          <a class="pill" href="https://apps.dhaneshlabs.com" target="_blank" rel="noreferrer">Go to Live Apps</a>
+          <a class="pill ghost" href="/products">Back to Products</a>
         </div>
       </div>
       <div class="hero-panel">
         <div class="panel glass">
-          <div class="panel-header"><span class="dot green"></span><span class="dot amber"></span><span class="dot red"></span><span class="panel-title">Live preview</span></div>
+          <div class="panel-header">
+            <span class="dot green"></span>
+            <span class="dot amber"></span>
+            <span class="dot red"></span>
+            <span class="panel-title">Current Focus</span>
+          </div>
           <div class="panel-body">
-            <div class="flow">
-              <div class="flow-node"><span class="node-title">Vision</span><span class="node-sub">Contextual UI hints</span></div>
-              <div class="flow-node"><span class="node-title">Agents</span><span class="node-sub">Multi-turn planners</span></div>
-              <div class="flow-node"><span class="node-title">Ops</span><span class="node-sub">Alerts + metrics</span></div>
+            <div class="chip-row">
+              <span class="chip">Agents</span>
+              <span class="chip">RAG</span>
+              <span class="chip">Realtime</span>
+              <span class="chip">Eval</span>
             </div>
-            <div class="status"><span class="status-label">Featured:</span><span class="status-pill">Autonomous Sprint Coach</span></div>
+            <div class="status">
+              <span class="status-label">Featured:</span>
+              <span class="status-pill">Autonomous Sprint Coach</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="grid" id="cases">
+    <section class="showcase">
       <div class="section-heading">
-        <p class="eyebrow">Case studies</p>
-        <h2>Recent launches</h2>
+        <p class="eyebrow">Flagship Apps</p>
+        <h2>What we are actively shipping</h2>
       </div>
-      <div class="grid-cards">
-        <article class="card"><div class="card-top"><p class="card-label">Agent Ops</p><span class="pill mini">Edge</span></div><h3>Autonomous Sprint Coach</h3><p>Reads repos, drafts plans, critiques PRs. Streaming UI + safeguards.</p><div class="tags"><span>LangGraph</span><span>RAG</span><span>Tracing</span></div></article>
-        <article class="card"><div class="card-top"><p class="card-label">Vision</p><span class="pill mini">Realtime</span></div><h3>Visual Debugger</h3><p>Upload screenshots, get actionable steps, emit CLI patches.</p><div class="tags"><span>Vision</span><span>CLI</span><span>Edge</span></div></article>
-        <article class="card"><div class="card-top"><p class="card-label">Data</p><span class="pill mini">Playground</span></div><h3>Data Concierge</h3><p>Chat with structured + unstructured data, pre-wired eval hooks.</p><div class="tags"><span>CSV/JSON</span><span>RAG</span><span>Evals</span></div></article>
+      <div class="showcase-grid">
+        <article class="tile">
+          <div class="tile-head"><span class="tile-tag">Live</span><span class="tile-meta">Agentic</span></div>
+          <h3>Autonomous Sprint Coach</h3>
+          <p>Plans iterations, validates implementation quality, and helps teams execute faster.</p>
+        </article>
+        <article class="tile">
+          <div class="tile-head"><span class="tile-tag">Beta</span><span class="tile-meta">Data + Vision</span></div>
+          <h3>Data Concierge</h3>
+          <p>Analyze documents, screenshots, and structured data in one guided workflow.</p>
+        </article>
+        <article class="tile">
+          <div class="tile-head"><span class="tile-tag">Lab</span><span class="tile-meta">Automation</span></div>
+          <h3>Workflow Automator</h3>
+          <p>Connect prompts, triggers, and actions to automate daily AI operations.</p>
+        </article>
       </div>
-    </section>
-
-    <section class="cta" id="contact">
-      <div><p class="eyebrow">Build with us</p><h2>Need a custom AI app?</h2><p class="hint">Spec, prototype, and ship in two-week sprints.</p></div>
-      <form class="cta-form" action="https://formspree.io/f/mwkgrvge" method="POST"><input type="email" name="email" placeholder="you@example.com" required><button type="submit">Request a sprint</button></form>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="brand">
+      <img src="public/assets/logo.png" alt="Dhanesh Labs logo" class="logo" />
+      <div>
+        <span class="brand-name">Dhanesh Labs</span>
+        <span class="brand-tag">Code • Create • Wander</span>
+      </div>
+    </div>
+    <div class="foot-links">
+      <a href="/">Home</a>
+      <a href="/studio">Studio</a>
+      <a href="/products">Products</a>
+      <a href="/content">Content</a>
+      <a href="/travel">Travel</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <p class="foot-note">Built on Vercel · 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
