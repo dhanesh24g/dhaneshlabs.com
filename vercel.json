@@ -1,19 +1,46 @@
 {
+  "version": 2,
   "builds": [
-    { "src": "**", "use": "@vercel/static" }
+    {
+      "src": "index.js",
+      "use": "@vercel/node"
+    }
   ],
   "routes": [
-    { "handle": "filesystem" },
     {
-      "src": "/(.*)",
-      "has": [{ "type": "host", "value": "apps.dhaneshlabs.com" }],
-      "dest": "/apps/$1"
+      "handle": "filesystem"
+    },
+    {
+      "src": "/styles.css",
+      "dest": "/styles.css"
+    },
+    {
+      "src": "/script.js",
+      "dest": "/script.js"
+    },
+    {
+      "src": "/public/(.*)",
+      "dest": "/public/$1"
+    },
+    {
+      "src": "/apps",
+      "dest": "/apps/index.html"
+    },
+    {
+      "src": "/tools",
+      "dest": "/tools/index.html"
+    },
+    {
+      "src": "/content",
+      "dest": "/content/index.html"
+    },
+    {
+      "src": "/travel",
+      "dest": "/travel/index.html"
     },
     {
       "src": "/(.*)",
-      "has": [{ "type": "host", "value": "tools.dhaneshlabs.com" }],
-      "dest": "/tools/$1"
-    },
-    { "src": "/(.*)", "dest": "/index.html" }
+      "dest": "/index.js"
+    }
   ]
 }
