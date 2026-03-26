@@ -1,0 +1,16 @@
+{
+  "name": "dhaneshlabs.com",
+  "version": "1.0.0",
+  "description": "The official DhaneshLabs website",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "ai",
+    "website",
+    "portfolio"
+  ],
+  "author": "DhaneshLabs",
+  "license": "MIT"
+}
