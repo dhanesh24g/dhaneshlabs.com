@@ -13,7 +13,7 @@
           ? stored
           : (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
         document.documentElement.setAttribute("data-theme", theme);
-      } catch (e) {}
+      } catch (e) { }
     })();
   </script>
   <title>Dhanesh Labs | Apps</title>
@@ -22,7 +22,7 @@
   <meta property="og:title" content="Dhanesh Labs | Apps">
   <meta property="og:description" content="Explore production-ready AI apps from Dhanesh Labs.">
   <meta property="og:image" content="public/assets/logo.png">
-  <meta property="og:url" content="https://dhaneshlabs.com/apps">
+  <meta property="og:url" content="https://apps.dhaneshlabs.com/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Dhanesh Labs | Apps">
   <meta name="twitter:description" content="Explore production-ready AI apps from Dhanesh Labs.">
@@ -40,107 +40,273 @@
   <div class="noise"></div>
   <div class="glow glow-1"></div>
   <div class="glow glow-2"></div>
-  <header class="nav">
-    <a class="brand" href="/" aria-label="Go to home">
+
+  <header class="minimal-nav">
+    <a class="brand" href="https://dhaneshlabs.com" aria-label="Go to main site">
       <img src="public/assets/logo.png" alt="Dhanesh Labs logo" class="logo" />
       <div>
         <span class="brand-name">Dhanesh Labs</span>
-        <span class="brand-tag">Code • Create • Wander</span>
+        <span class="brand-tag">Apps Hub</span>
       </div>
     </a>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/studio">Studio</a>
-      <a href="/products">Products</a>
-      <a class="active" href="/apps">Apps</a>
-      <a href="/content">Content</a>
-      <a href="/travel">Travel</a>
-      <a href="/contact">Contact</a>
-    </nav>
-    <div class="nav-actions">
-      <a class="pill" href="https://apps.dhaneshlabs.com" target="_blank" rel="noreferrer">Apps Hub</a>
+    <div class="nav-right">
+      <nav>
+        <a href="https://dhaneshlabs.com" target="_blank" rel="noreferrer">← Back to Main Site</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
     </div>
   </header>
 
   <main>
-    <section class="hero" id="studio">
-      <div class="hero-content">
-        <p class="eyebrow">Apps • Shipping • Production</p>
-        <h1>AI apps that are <span class="accent">ready for users</span></h1>
-        <p class="lede">These apps are built to move from prototype to production with observability, performance, and
-          reliability baked in from day one.</p>
-        <div class="hero-cta">
-          <a class="pill" href="https://apps.dhaneshlabs.com" target="_blank" rel="noreferrer">Go to Live Apps</a>
-          <a class="pill ghost" href="/products">Back to Products</a>
-        </div>
-      </div>
-      <div class="hero-panel">
-        <div class="panel glass">
-          <div class="panel-header">
-            <span class="dot green"></span>
-            <span class="dot amber"></span>
-            <span class="dot red"></span>
-            <span class="panel-title">Current Focus</span>
-          </div>
-          <div class="panel-body">
-            <div class="chip-row">
-              <span class="chip">Agents</span>
-              <span class="chip">RAG</span>
-              <span class="chip">Realtime</span>
-              <span class="chip">Eval</span>
-            </div>
-            <div class="status">
-              <span class="status-label">Featured:</span>
-              <span class="status-pill">Autonomous Sprint Coach</span>
-            </div>
-          </div>
-        </div>
+    <section class="apps-hero">
+      <div class="apps-hero-content">
+        <h1>Production Apps</h1>
+        <p>Real-world applications built and shipped by Dhanesh Labs.</p>
       </div>
     </section>
 
-    <section class="showcase">
-      <div class="section-heading">
-        <p class="eyebrow">Flagship Apps</p>
-        <h2>What we are actively shipping</h2>
-      </div>
+    <section class="apps-grid">
       <div class="showcase-grid">
-        <article class="tile">
-          <div class="tile-head"><span class="tile-tag">Live</span><span class="tile-meta">Agentic</span></div>
-          <h3>Autonomous Sprint Coach</h3>
-          <p>Plans iterations, validates implementation quality, and helps teams execute faster.</p>
+        <article class="tile" onclick="window.open('http://127.0.0.1:8001', '_blank')">
+          <div class="tile-head"><span class="tile-tag">Live</span><span class="tile-meta">Fintech</span></div>
+          <h3>League Ledger</h3>
+          <p>Offline fantasy league money settlement system with winner payouts and player ledgers.</p>
         </article>
-        <article class="tile">
-          <div class="tile-head"><span class="tile-tag">Beta</span><span class="tile-meta">Data + Vision</span></div>
-          <h3>Data Concierge</h3>
-          <p>Analyze documents, screenshots, and structured data in one guided workflow.</p>
+        <article class="tile coming-soon">
+          <div class="tile-head"><span class="tile-tag">Soon</span><span class="tile-meta">AI Tools</span></div>
+          <h3>Code Assistant</h3>
+          <p>AI-powered code review and suggestions for development workflows.</p>
         </article>
-        <article class="tile">
-          <div class="tile-head"><span class="tile-tag">Lab</span><span class="tile-meta">Automation</span></div>
-          <h3>Workflow Automator</h3>
-          <p>Connect prompts, triggers, and actions to automate daily AI operations.</p>
+        <article class="tile coming-soon">
+          <div class="tile-head"><span class="tile-tag">Planned</span><span class="tile-meta">Analytics</span></div>
+          <h3>Dashboard Pro</h3>
+          <p>Real-time analytics and insights for your applications.</p>
         </article>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <a class="brand foot-brand" href="/" aria-label="Go to home">
-      <img src="public/assets/logo.png" alt="Dhanesh Labs logo" class="logo" />
-      <div>
-        <span class="brand-name">Dhanesh Labs</span>
-        <span class="brand-tag">Code • Create • Wander</span>
-      </div>
-    </a>
-    <div class="foot-links">
-      <a href="/">Home</a>
-      <a href="/studio">Studio</a>
-      <a href="/products">Products</a>
-      <a href="/content">Content</a>
-      <a href="/travel">Travel</a>
-      <a href="/contact">Contact</a>
-    </div>
-    <p class="foot-note">Built with ❤️ on Vercel · 2026</p>
+  <footer class="minimal-footer">
+    <p>Built with ❤️ by Dhanesh Labs · <a href="https://dhaneshlabs.com" target="_blank" rel="noreferrer">Visit Main
+        Site</a></p>
   </footer>
+
+  <style>
+    .minimal-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.02);
+    }
+
+    .minimal-nav .brand .brand-tag {
+      color: var(--accent);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .theme-toggle {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .theme-toggle:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--accent);
+    }
+
+    .theme-toggle:active {
+      transform: scale(0.95);
+    }
+
+    .theme-icon {
+      font-size: 16px;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    /* Theme-based positioning */
+    [data-theme="dark"] .theme-toggle {
+      transform: translateY(0) translateX(0);
+    }
+
+    [data-theme="light"] .theme-toggle {
+      transform: translateY(4px) translateX(4px);
+    }
+
+    .minimal-nav nav {
+      display: flex;
+      align-items: center;
+    }
+
+    .minimal-nav nav a {
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--text);
+      opacity: 0.8;
+      transition: all 0.2s ease;
+      font-weight: 500;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .minimal-nav nav a:hover {
+      opacity: 1;
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .apps-hero {
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+    }
+
+    .apps-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .apps-hero p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    .apps-grid {
+      padding: 2rem;
+    }
+
+    .minimal-footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      opacity: 0.7;
+    }
+
+    .minimal-footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .coming-soon {
+      opacity: 0.7;
+      position: relative;
+    }
+
+    .coming-soon::after {
+      content: "Coming Soon";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-15deg);
+      background: var(--accent);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .coming-soon .tile-head {
+      opacity: 0.5;
+    }
+
+    .coming-soon h3 {
+      opacity: 0.6;
+    }
+
+    .coming-soon p {
+      opacity: 0.5;
+    }
+
+    /* Tile hover effects */
+    .tile {
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tile:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .tile::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg,
+          transparent 30%,
+          rgba(255, 255, 255, 0.1) 50%,
+          transparent 70%);
+      transform: rotate(45deg) translateX(-100%);
+      transition: transform 0.6s ease;
+      pointer-events: none;
+    }
+
+    .tile:hover::before {
+      transform: rotate(45deg) translateX(100%);
+    }
+
+    .tile h3 {
+      transition: color 0.3s ease;
+    }
+
+    .tile:hover h3 {
+      color: var(--accent);
+    }
+  </style>
+
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle.querySelector('.theme-icon');
+
+    // Load saved theme or default to system preference
+    const savedTheme = localStorage.getItem('dhaneshlabs-theme') ||
+      (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('dhaneshlabs-theme', newTheme);
+      updateThemeIcon(newTheme);
+    });
+
+    function updateThemeIcon(theme) {
+      themeIcon.textContent = theme === 'light' ? '☀️' : '🌙';
+    }
+  </script>
 
   <script src="script.js"></script>
 </body>
