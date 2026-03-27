@@ -10,6 +10,7 @@ const status = [
   'Edge deployment checklist',
   'Streaming UI revamp'
 ];
+const THEME_STORAGE_KEY = 'dhaneshlabs-theme';
 
 function pick(array) { return array[Math.floor(Math.random() * array.length)]; }
 
@@ -35,7 +36,63 @@ function handleScrollReveal() {
   document.querySelectorAll('section').forEach(section => observer.observe(section));
 }
 
+function getPreferredTheme() {
+  if (typeof window === 'undefined') return 'dark';
+  const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
+  if (storedTheme === 'light' || storedTheme === 'dark') return storedTheme;
+  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+}
+
+function setTheme(theme) {
+  const safeTheme = theme === 'light' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', safeTheme);
+  window.localStorage.setItem(THEME_STORAGE_KEY, safeTheme);
+  const button = document.getElementById('theme-toggle');
+  if (button) {
+    const nextMode = safeTheme === 'dark' ? 'light' : 'dark';
+    button.setAttribute('aria-label', `Switch to ${nextMode} mode`);
+    button.setAttribute('title', `Switch to ${nextMode} mode`);
+    button.setAttribute('aria-pressed', safeTheme === 'light' ? 'true' : 'false');
+    button.setAttribute('data-theme', safeTheme);
+  }
+}
+
+function injectThemeToggle() {
+  const navActions = document.querySelector('.nav-actions');
+  if (!navActions || document.getElementById('theme-toggle')) return;
+
+  const appsLink = navActions.querySelector('a[href^="https://apps.dhaneshlabs.com"]');
+  if (appsLink) {
+    appsLink.textContent = 'Apps Hub';
+  }
+
+  const themeControl = document.createElement('div');
+  themeControl.className = 'theme-control';
+
+  const themeModeLabel = document.createElement('span');
+  themeModeLabel.id = 'theme-mode-label';
+  themeModeLabel.className = 'theme-mode-label';
+  themeModeLabel.textContent = 'Theme';
+
+  const toggleButton = document.createElement('button');
+  toggleButton.id = 'theme-toggle';
+  toggleButton.type = 'button';
+  toggleButton.className = 'theme-toggle';
+  themeControl.append(themeModeLabel, toggleButton);
+  navActions.appendChild(themeControl);
+  toggleButton.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    setTheme(currentTheme === 'light' ? 'dark' : 'light');
+  });
+}
+
+function initializeTheme() {
+  injectThemeToggle();
+  setTheme(getPreferredTheme());
+}
+
 window.addEventListener('DOMContentLoaded', () => {
+  initializeTheme();
   setDynamicBits();
   handleScrollReveal();
 });
