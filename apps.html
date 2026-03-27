@@ -41,24 +41,6 @@
   <div class="glow glow-1"></div>
   <div class="glow glow-2"></div>
 
-  <header class="minimal-nav">
-    <a class="brand" href="https://dhaneshlabs.com" aria-label="Go to main site">
-      <img src="public/assets/logo.png" alt="Dhanesh Labs logo" class="logo" />
-      <div>
-        <span class="brand-name">Dhanesh Labs</span>
-        <span class="brand-tag">Apps Hub</span>
-      </div>
-    </a>
-    <div class="nav-right">
-      <nav>
-        <a href="https://dhaneshlabs.com" target="_blank" rel="noreferrer">← Back to Main Site</a>
-      </nav>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-        <span class="theme-icon">🌙</span>
-      </button>
-    </div>
-  </header>
-
   <main>
     <section class="apps-hero">
       <div class="apps-hero-content">
@@ -88,127 +70,100 @@
     </section>
   </main>
 
-  <footer class="minimal-footer">
-    <p>Built with ❤️ by Dhanesh Labs · <a href="https://dhaneshlabs.com" target="_blank" rel="noreferrer">Visit Main
-        Site</a></p>
-  </footer>
-
   <style>
-    .minimal-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.25rem 2rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      background: rgba(0, 0, 0, 0.02);
-    }
-
-    .minimal-nav .brand .brand-tag {
-      color: var(--accent);
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .theme-toggle {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 6px;
-      width: 32px;
-      height: 32px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
-    }
-
-    .theme-toggle:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: var(--accent);
-    }
-
-    .theme-toggle:active {
-      transform: scale(0.95);
-    }
-
-    .theme-icon {
-      font-size: 16px;
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-
-    /* Theme-based positioning */
-    [data-theme="dark"] .theme-toggle {
-      transform: translateY(0) translateX(0);
-    }
-
-    [data-theme="light"] .theme-toggle {
-      transform: translateY(4px) translateX(4px);
-    }
-
-    .minimal-nav nav {
-      display: flex;
-      align-items: center;
-    }
-
-    .minimal-nav nav a {
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      text-decoration: none;
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
       color: var(--text);
-      opacity: 0.8;
-      transition: all 0.2s ease;
-      font-weight: 500;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .minimal-nav nav a:hover {
-      opacity: 1;
-      background: rgba(255, 255, 255, 0.1);
-      border-color: var(--accent);
-      transform: translateY(-1px);
+      font-family: 'Manrope', sans-serif;
     }
 
     .apps-hero {
       text-align: center;
-      padding: 4rem 2rem 2rem;
+      padding: 6rem 2rem 3rem;
     }
 
     .apps-hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
     }
 
     .apps-hero p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       opacity: 0.8;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
     }
 
     .apps-grid {
-      padding: 2rem;
+      padding: 0 2rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .minimal-footer {
-      text-align: center;
-      padding: 2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      opacity: 0.7;
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
     }
 
-    .minimal-footer a {
-      color: var(--accent);
-      text-decoration: none;
+    .tile {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tile:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      border-color: var(--accent);
+    }
+
+    .tile-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .tile-tag {
+      background: var(--accent);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .tile-meta {
+      font-size: 0.9rem;
+      opacity: 0.6;
+      font-weight: 500;
+    }
+
+    .tile h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .tile p {
+      opacity: 0.8;
+      line-height: 1.5;
     }
 
     .coming-soon {
-      opacity: 0.7;
+      opacity: 0.6;
       position: relative;
     }
 
@@ -220,12 +175,13 @@
       transform: translate(-50%, -50%) rotate(-15deg);
       background: var(--accent);
       color: white;
-      padding: 0.25rem 0.75rem;
-      border-radius: 4px;
-      font-size: 0.75rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
       font-weight: 600;
       pointer-events: none;
       z-index: 1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 
     .coming-soon .tile-head {
@@ -240,73 +196,33 @@
       opacity: 0.5;
     }
 
-    /* Tile hover effects */
-    .tile {
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
+    @media (max-width: 768px) {
+      .apps-hero {
+        padding: 4rem 1.5rem 2rem;
+      }
 
-    .tile:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-    }
+      .apps-hero h1 {
+        font-size: 2.5rem;
+      }
 
-    .tile::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(45deg,
-          transparent 30%,
-          rgba(255, 255, 255, 0.1) 50%,
-          transparent 70%);
-      transform: rotate(45deg) translateX(-100%);
-      transition: transform 0.6s ease;
-      pointer-events: none;
-    }
+      .apps-hero p {
+        font-size: 1.1rem;
+      }
 
-    .tile:hover::before {
-      transform: rotate(45deg) translateX(100%);
-    }
+      .apps-grid {
+        padding: 0 1.5rem 3rem;
+      }
 
-    .tile h3 {
-      transition: color 0.3s ease;
-    }
+      .showcase-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
 
-    .tile:hover h3 {
-      color: var(--accent);
+      .tile {
+        padding: 1.5rem;
+      }
     }
   </style>
-
-  <script>
-    // Theme toggle functionality
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = themeToggle.querySelector('.theme-icon');
-
-    // Load saved theme or default to system preference
-    const savedTheme = localStorage.getItem('dhaneshlabs-theme') ||
-      (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
-
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('dhaneshlabs-theme', newTheme);
-      updateThemeIcon(newTheme);
-    });
-
-    function updateThemeIcon(theme) {
-      themeIcon.textContent = theme === 'light' ? '☀️' : '🌙';
-    }
-  </script>
 
   <script src="script.js"></script>
 </body>
