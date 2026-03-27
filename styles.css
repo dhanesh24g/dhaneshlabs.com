@@ -841,9 +841,34 @@ section {
 @media (max-width: 760px) {
   body {
     padding: 0 5vw 80px;
+    background: radial-gradient(circle at 12% 10%, var(--bg-radial-1), transparent 45%),
+      radial-gradient(circle at 92% 4%, var(--bg-radial-2), transparent 42%),
+      var(--bg);
   }
 
   .nav nav {
+    display: flex;
+    grid-column: 1 / -1;
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    padding: 4px 0 2px;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .nav nav a {
+    margin: 0;
+    padding: 7px 11px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--surface-soft);
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+
+  .nav nav a.active::after {
     display: none;
   }
 
@@ -854,6 +879,7 @@ section {
 
   .nav {
     grid-template-columns: 1fr auto;
+    gap: 12px;
     margin: 0 -5vw;
     padding: 20px 5vw;
     border-radius: 0 0 14px 14px;
@@ -883,6 +909,20 @@ section {
 
   .theme-control {
     padding: 2px;
+  }
+
+  .glow {
+    opacity: 0.2;
+    filter: blur(120px);
+  }
+
+  .noise {
+    opacity: 0.26;
+  }
+
+  html[data-theme='light'] .noise {
+    opacity: 0.16;
+    mix-blend-mode: soft-light;
   }
 
   .brand-name {
