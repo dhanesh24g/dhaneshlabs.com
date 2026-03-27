@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      try {
+        var key = "dhaneshlabs-theme";
+        var stored = localStorage.getItem(key);
+        var theme = (stored === "light" || stored === "dark")
+          ? stored
+          : (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (e) { }
+    })();
+  </script>
+  <title>Dhanesh Labs | Apps</title>
+  <meta name="description" content="Production-ready AI apps built by Dhanesh Labs for real-world deployment.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dhanesh Labs | Apps">
+  <meta property="og:description" content="Explore production-ready AI apps from Dhanesh Labs.">
+  <meta property="og:image" content="public/assets/logo.png">
+  <meta property="og:url" content="https://apps.dhaneshlabs.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dhanesh Labs | Apps">
+  <meta name="twitter:description" content="Explore production-ready AI apps from Dhanesh Labs.">
+  <meta name="twitter:image" content="public/assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="public/assets/favicon.png">
+</head>
+
+<body>
+  <div class="noise"></div>
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+
+  <main>
+    <section class="apps-hero">
+      <div class="apps-hero-content">
+        <h1>Production Apps</h1>
+        <p>Real-world applications built and shipped by Dhanesh Labs.</p>
+      </div>
+    </section>
+
+    <section class="apps-grid">
+      <div class="showcase-grid">
+        <article class="tile" onclick="window.open('https://league.dhaneshlabs.com', '_blank')">
+          <div class="tile-head"><span class="tile-tag">Live</span><span class="tile-meta">Fintech</span></div>
+          <h3>League Ledger</h3>
+          <p>Offline fantasy league money settlement system with winner payouts and player ledgers.</p>
+        </article>
+        <article class="tile coming-soon">
+          <div class="tile-head"><span class="tile-tag">Soon</span><span class="tile-meta">AI Tools</span></div>
+          <h3>Code Assistant</h3>
+          <p>AI-powered code review and suggestions for development workflows.</p>
+        </article>
+        <article class="tile coming-soon">
+          <div class="tile-head"><span class="tile-tag">Planned</span><span class="tile-meta">Analytics</span></div>
+          <h3>Dashboard Pro</h3>
+          <p>Real-time analytics and insights for your applications.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .apps-hero {
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+    }
+
+    .apps-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .apps-hero p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    .apps-grid {
+      padding: 2rem;
+    }
+
+    .coming-soon {
+      opacity: 0.7;
+      position: relative;
+    }
+
+    .coming-soon::after {
+      content: "Coming Soon";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-15deg);
+      background: var(--accent);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .coming-soon .tile-head {
+      opacity: 0.5;
+    }
+
+    .coming-soon h3 {
+      opacity: 0.6;
+    }
+
+    .coming-soon p {
+      opacity: 0.5;
+    }
+
+    /* Tile hover effects */
+    .tile {
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tile:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .tile::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg,
+          transparent 30%,
+          rgba(255, 255, 255, 0.1) 50%,
+          transparent 70%);
+      transform: rotate(45deg) translateX(-100%);
+      transition: transform 0.6s ease;
+      pointer-events: none;
+    }
+
+    .tile:hover::before {
+      transform: rotate(45deg) translateX(100%);
+    }
+
+    .tile h3 {
+      transition: color 0.3s ease;
+    }
+
+    .tile:hover h3 {
+      color: var(--accent);
+    }
+  </style>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
