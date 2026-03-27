@@ -46,6 +46,9 @@
       <div class="apps-hero-content">
         <h1>Production Apps</h1>
         <p>Real-world applications built and shipped by Dhanesh Labs.</p>
+        <div class="back-link">
+          <a href="https://dhaneshlabs.com">← Back to Main Site</a>
+        </div>
       </div>
     </section>
 
@@ -71,6 +74,31 @@
   </main>
 
   <style>
+    .back-link {
+      margin-top: 2rem;
+    }
+
+    .back-link a {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--text);
+      opacity: 0.8;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .back-link a:hover {
+      opacity: 1;
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
     .apps-hero {
       text-align: center;
       padding: 4rem 2rem 2rem;
