@@ -17,7 +17,7 @@
           "value": "apps.dhaneshlabs.com"
         }
       ],
-      "dest": "/apps.html"
+      "dest": "/apps-clean.html"
     },
     {
       "src": "/(.*)",
@@ -27,7 +27,7 @@
           "value": "apps.dhaneshlabs.com"
         }
       ],
-      "dest": "/apps.html"
+      "dest": "/apps-clean.html"
     },
     {
       "src": "/",
@@ -50,31 +50,31 @@
       "dest": "/tools.html"
     },
     {
-      "src": "/studio/?",
+      "src": "/studio",
       "dest": "/studio.html"
     },
     {
-      "src": "/products/?",
+      "src": "/products",
       "dest": "/products.html"
     },
     {
-      "src": "/apps/?",
+      "src": "/apps",
       "dest": "/apps.html"
     },
     {
-      "src": "/tools/?",
+      "src": "/tools",
       "dest": "/tools.html"
     },
     {
-      "src": "/content/?",
+      "src": "/content",
       "dest": "/content.html"
     },
     {
-      "src": "/travel/?",
+      "src": "/travel",
       "dest": "/travel.html"
     },
     {
-      "src": "/contact/?",
+      "src": "/contact",
       "dest": "/contact.html"
     },
     {
