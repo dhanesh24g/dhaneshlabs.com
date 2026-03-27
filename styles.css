@@ -826,6 +826,29 @@ section {
   transform: translateY(0);
 }
 
+@media (max-width: 1180px) and (min-width: 761px) {
+  .nav {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 16px;
+  }
+
+  .nav nav {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    padding-bottom: 2px;
+  }
+
+  .nav nav a {
+    white-space: nowrap;
+  }
+
+  .nav nav a.active::after {
+    display: none;
+  }
+}
+
 @keyframes rise {
   from {
     opacity: 0;
@@ -883,6 +906,7 @@ section {
     margin: 0 -5vw;
     padding: 20px 5vw;
     border-radius: 0 0 14px 14px;
+    backdrop-filter: none;
   }
 
   .hero-cta {
@@ -912,17 +936,16 @@ section {
   }
 
   .glow {
-    opacity: 0.2;
-    filter: blur(120px);
+    display: none;
   }
 
   .noise {
-    opacity: 0.26;
+    display: none;
   }
 
-  html[data-theme='light'] .noise {
-    opacity: 0.16;
-    mix-blend-mode: soft-light;
+  .panel,
+  .card {
+    backdrop-filter: none;
   }
 
   .brand-name {
