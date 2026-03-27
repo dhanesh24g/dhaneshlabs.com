@@ -171,6 +171,14 @@ body {
   align-items: center;
   gap: 10px;
   min-width: fit-content;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand:focus-visible {
+  outline: 2px solid var(--accent-solid);
+  outline-offset: 3px;
+  border-radius: 12px;
 }
 
 .logo {
@@ -826,6 +834,43 @@ section {
   transform: translateY(0);
 }
 
+@media (max-width: 1180px) and (min-width: 761px) {
+  .nav {
+    grid-template-columns: 1fr auto;
+    gap: 12px 16px;
+  }
+
+  .nav nav {
+    grid-column: 1 / -1;
+    order: 3;
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    padding: 4px 0 2px;
+    gap: 18px;
+  }
+
+  .nav nav a {
+    margin: 0;
+    padding: 2px 0;
+    border: 0;
+    background: transparent;
+    white-space: nowrap;
+    flex: 0 0 auto;
+    line-height: 1.2;
+  }
+
+  .nav nav a.active::after {
+    display: none;
+  }
+
+  .nav-actions .pill {
+    padding: 8px 12px;
+  }
+}
+
 @keyframes rise {
   from {
     opacity: 0;
@@ -883,6 +928,7 @@ section {
     margin: 0 -5vw;
     padding: 20px 5vw;
     border-radius: 0 0 14px 14px;
+    backdrop-filter: none;
   }
 
   .hero-cta {
@@ -912,17 +958,16 @@ section {
   }
 
   .glow {
-    opacity: 0.2;
-    filter: blur(120px);
+    display: none;
   }
 
   .noise {
-    opacity: 0.26;
+    display: none;
   }
 
-  html[data-theme='light'] .noise {
-    opacity: 0.16;
-    mix-blend-mode: soft-light;
+  .panel,
+  .card {
+    backdrop-filter: none;
   }
 
   .brand-name {
