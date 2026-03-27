@@ -69,16 +69,11 @@ function injectThemeToggle() {
   const themeControl = document.createElement('div');
   themeControl.className = 'theme-control';
 
-  const themeModeLabel = document.createElement('span');
-  themeModeLabel.id = 'theme-mode-label';
-  themeModeLabel.className = 'theme-mode-label';
-  themeModeLabel.textContent = 'Theme';
-
   const toggleButton = document.createElement('button');
   toggleButton.id = 'theme-toggle';
   toggleButton.type = 'button';
   toggleButton.className = 'theme-toggle';
-  themeControl.append(themeModeLabel, toggleButton);
+  themeControl.append(toggleButton);
   navActions.appendChild(themeControl);
   toggleButton.addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
