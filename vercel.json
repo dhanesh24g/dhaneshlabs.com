@@ -54,6 +54,18 @@
       "dest": "/studio.html"
     },
     {
+      "src": "/products/league-ledger",
+      "dest": "/products/league-ledger.html"
+    },
+    {
+      "src": "/products/code-assistant",
+      "dest": "/products/code-assistant.html"
+    },
+    {
+      "src": "/products/dashboard-pro",
+      "dest": "/products/dashboard-pro.html"
+    },
+    {
       "src": "/products",
       "dest": "/products.html"
     },

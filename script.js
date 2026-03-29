@@ -10,6 +10,48 @@ const status = [
   'Edge deployment checklist',
   'Streaming UI revamp'
 ];
+const productDrops = [
+  'Products hub structure',
+  'League Ledger detail page',
+  'Product labeling system',
+  'Scalable product routing'
+];
+const productStatus = [
+  'Products Hub',
+  'League Ledger featured',
+  'Live and beta lineup'
+];
+const leagueLedgerDrops = [
+  'League setup flow',
+  'Tie-aware payout logic',
+  'Washout refund handling',
+  'Live player ledger'
+];
+const leagueLedgerStatus = [
+  'League Ledger',
+  'Payout workflow polish',
+  'Settlement visibility'
+];
+const codeAssistantDrops = [
+  'Beta access flow',
+  'Review support direction',
+  'Workflow guidance shaping'
+];
+const codeAssistantStatus = [
+  'Code Assistant beta',
+  'Request access open',
+  'Beta page live'
+];
+const dashboardProDrops = [
+  'Waitlist setup',
+  'Analytics concept shaping',
+  'Coming-soon page live'
+];
+const dashboardProStatus = [
+  'Dashboard Pro coming soon',
+  'Waitlist active',
+  'Planned analytics release'
+];
 const THEME_STORAGE_KEY = 'dhaneshlabs-theme';
 
 function pick(array) { return array[Math.floor(Math.random() * array.length)]; }
@@ -19,8 +61,31 @@ function setDynamicBits() {
   const pill = document.getElementById('status-pill');
   const now = new Date();
   const dateStr = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-  if (latest) latest.textContent = `${pick(drops)} · updated ${dateStr}`;
-  if (pill) pill.textContent = pick(status);
+  const pathname = window.location.pathname;
+  const isProductsHub = pathname === '/products' || pathname.endsWith('/products.html');
+  const isLeagueLedgerPage = pathname === '/products/league-ledger' || pathname.endsWith('/products/league-ledger.html');
+  const isCodeAssistantPage = pathname === '/products/code-assistant' || pathname.endsWith('/products/code-assistant.html');
+  const isDashboardProPage = pathname === '/products/dashboard-pro' || pathname.endsWith('/products/dashboard-pro.html');
+  const activeDrops = isLeagueLedgerPage
+    ? leagueLedgerDrops
+    : isCodeAssistantPage
+      ? codeAssistantDrops
+      : isDashboardProPage
+        ? dashboardProDrops
+        : isProductsHub
+          ? productDrops
+          : drops;
+  const activeStatus = isLeagueLedgerPage
+    ? leagueLedgerStatus
+    : isCodeAssistantPage
+      ? codeAssistantStatus
+      : isDashboardProPage
+        ? dashboardProStatus
+        : isProductsHub
+          ? productStatus
+          : status;
+  if (latest) latest.textContent = `${pick(activeDrops)} · updated ${dateStr}`;
+  if (pill) pill.textContent = pick(activeStatus);
 }
 
 function handleScrollReveal() {
@@ -34,6 +99,25 @@ function handleScrollReveal() {
   }, { threshold: 0.2 });
 
   document.querySelectorAll('section').forEach(section => observer.observe(section));
+}
+
+function initializeClickableProductCards() {
+  document.querySelectorAll('[data-card-href]').forEach(card => {
+    const href = card.getAttribute('data-card-href');
+    if (!href) return;
+
+    card.addEventListener('click', event => {
+      if (event.target.closest('a, button')) return;
+      window.location.href = href;
+    });
+
+    card.addEventListener('keydown', event => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      if (event.target.closest('a, button') && event.target !== card) return;
+      event.preventDefault();
+      window.location.href = href;
+    });
+  });
 }
 
 function getPreferredTheme() {
@@ -90,4 +174,5 @@ window.addEventListener('DOMContentLoaded', () => {
   initializeTheme();
   setDynamicBits();
   handleScrollReveal();
+  initializeClickableProductCards();
 });

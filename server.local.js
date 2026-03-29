@@ -1,17 +1,83 @@
-const express = require('express');
+const http = require('http');
+const fs = require('fs');
 const path = require('path');
-const app = express();
+
 const PORT = process.env.PORT || 3000;
+const ROOT = __dirname;
 
-// Serve static files from current directory
-app.use(express.static(__dirname));
-app.use('/public', express.static(path.join(__dirname, 'public')));
+const routeMap = {
+  '/': 'index.html',
+  '/studio': 'studio.html',
+  '/products': 'products.html',
+  '/products/league-ledger': 'products/league-ledger.html',
+  '/products/code-assistant': 'products/code-assistant.html',
+  '/products/dashboard-pro': 'products/dashboard-pro.html',
+  '/apps': 'apps.html',
+  '/tools': 'tools.html',
+  '/content': 'content.html',
+  '/travel': 'travel.html',
+  '/contact': 'contact.html'
+};
 
-// Serve index.html for all routes (SPA)
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+const contentTypes = {
+  '.html': 'text/html; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
+  '.js': 'application/javascript; charset=utf-8',
+  '.json': 'application/json; charset=utf-8',
+  '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.svg': 'image/svg+xml',
+  '.ico': 'image/x-icon',
+  '.txt': 'text/plain; charset=utf-8'
+};
+
+function sendFile(res, filePath) {
+  fs.readFile(filePath, (err, data) => {
+    if (err) {
+      res.writeHead(err.code === 'ENOENT' ? 404 : 500, {
+        'Content-Type': 'text/plain; charset=utf-8'
+      });
+      res.end(err.code === 'ENOENT' ? 'Not found' : 'Server error');
+      return;
+    }
+
+    const ext = path.extname(filePath).toLowerCase();
+    res.writeHead(200, {
+      'Content-Type': contentTypes[ext] || 'application/octet-stream'
+    });
+    res.end(data);
+  });
+}
+
+const server = http.createServer((req, res) => {
+  const url = new URL(req.url, `http://${req.headers.host}`);
+  const pathname = decodeURIComponent(url.pathname);
+
+  if (routeMap[pathname]) {
+    sendFile(res, path.join(ROOT, routeMap[pathname]));
+    return;
+  }
+
+  const relativePath = pathname.replace(/^\/+/, '');
+  const absolutePath = path.normalize(path.join(ROOT, relativePath));
+
+  if (!absolutePath.startsWith(ROOT)) {
+    res.writeHead(403, { 'Content-Type': 'text/plain; charset=utf-8' });
+    res.end('Forbidden');
+    return;
+  }
+
+  fs.stat(absolutePath, (err, stats) => {
+    if (!err && stats.isFile()) {
+      sendFile(res, absolutePath);
+      return;
+    }
+
+    sendFile(res, path.join(ROOT, 'index.html'));
+  });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+server.listen(PORT, () => {
+  console.log(`Local server running at http://127.0.0.1:${PORT}`);
 });

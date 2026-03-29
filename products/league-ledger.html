@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      try {
+        var key = "dhaneshlabs-theme";
+        var stored = localStorage.getItem(key);
+        var theme = (stored === "light" || stored === "dark")
+          ? stored
+          : (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (e) {}
+    })();
+  </script>
+  <title>League Ledger | Dhanesh Labs</title>
+  <meta name="description"
+    content="League Ledger by Dhanesh Labs helps fantasy leagues manage payouts, winners, refunds, and player ledgers without spreadsheet chaos.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="League Ledger | Dhanesh Labs">
+  <meta property="og:description"
+    content="League Ledger helps fantasy leagues manage payouts, winners, refunds, and player ledgers without spreadsheet chaos.">
+  <meta property="og:image" content="/public/assets/logo.png">
+  <meta property="og:url" content="https://www.dhaneshlabs.com/products/league-ledger">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="League Ledger | Dhanesh Labs">
+  <meta name="twitter:description"
+    content="League Ledger helps fantasy leagues manage payouts, winners, refunds, and player ledgers without spreadsheet chaos.">
+  <meta name="twitter:image" content="/public/assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/png" href="/public/assets/favicon.png">
+</head>
+
+<body>
+  <div class="noise"></div>
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+  <header class="nav">
+    <a class="brand" href="/" aria-label="Go to home">
+      <img src="/public/assets/logo.png" alt="Dhanesh Labs logo" class="logo" />
+      <div>
+        <span class="brand-name">Dhanesh Labs</span>
+        <span class="brand-tag">Code • Create • Wander</span>
+      </div>
+    </a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/studio">Studio</a>
+      <a href="/products" class="active">Products</a>
+      <a href="/content">Content</a>
+      <a href="/travel">Travel</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="pill" href="https://apps.dhaneshlabs.com" target="_blank" rel="noreferrer">Apps Hub</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero product-hero">
+      <div class="hero-content">
+        <p class="eyebrow">Live Product • League Ledger</p>
+        <h1>Fantasy league settlements, <span class="accent">without spreadsheet chaos.</span></h1>
+        <p class="lede">League Ledger is a practical operating surface for friend groups and fantasy leagues that need
+          clear payout rules, accurate winner handling, and a running player ledger after every match.</p>
+        <div class="hero-cta">
+          <a class="pill" href="https://league.dhaneshlabs.com" target="_blank" rel="noreferrer">Launch App</a>
+          <a class="pill ghost" href="/products">Back to Products</a>
+        </div>
+        <div class="meta">
+          <div>
+            <span class="meta-label">Status</span>
+            <span class="meta-value">Live</span>
+          </div>
+          <div>
+            <span class="meta-label">Designed for</span>
+            <span class="meta-value">Fantasy leagues, recurring groups, offline settlement</span>
+          </div>
+          <div>
+            <span class="meta-label">Current focus</span>
+            <span class="meta-value" id="latest-drop">Preparing...</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="panel glass product-panel">
+          <div class="panel-header">
+            <span class="dot green"></span>
+            <span class="dot amber"></span>
+            <span class="dot red"></span>
+            <span class="panel-title">League Ledger</span>
+          </div>
+          <div class="panel-body">
+            <div class="chip-row">
+              <span class="chip">League setup</span>
+              <span class="chip">Winner payouts</span>
+              <span class="chip">Washout refunds</span>
+              <span class="chip">Net balances</span>
+            </div>
+            <div class="flow">
+              <div class="flow-node">
+                <span class="node-title">Configure</span>
+                <span class="node-sub">Set the rules once</span>
+              </div>
+              <div class="flow-node">
+                <span class="node-title">Record</span>
+                <span class="node-sub">Track matches and winners</span>
+              </div>
+              <div class="flow-node">
+                <span class="node-title">Settle</span>
+                <span class="node-sub">See spent, won, and net</span>
+              </div>
+            </div>
+            <div class="status">
+              <span class="status-label">Product state:</span>
+              <span class="status-pill" id="status-pill">League Ledger</span>
+            </div>
+          </div>
+        </div>
+        <div class="floating-card">
+          <p class="floating-label">Launch when ready</p>
+          <p class="floating-title">Built for the real post-match conversation</p>
+          <p class="floating-meta">The app launch sits here, after the story and value are already clear.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="section-heading">
+        <p class="eyebrow">Product Summary</p>
+        <h2>What League Ledger actually solves</h2>
+      </div>
+      <article class="card product-spotlight">
+        <div class="product-spotlight-copy">
+          <div class="card-top">
+            <p class="card-label">Live Product</p>
+            <span class="product-state state-live">Live</span>
+          </div>
+          <h3>Replace scattered notes, screenshots, and manual payout math.</h3>
+          <p>League Ledger gives a structured path from league setup through final settlement. Instead of reconstructing
+            who owes what after each game, the app keeps league rules, match results, winner assignments, refunds, and
+            net balances together in one place.</p>
+          <div class="tags">
+            <span>Fantasy leagues</span>
+            <span>Settlement tracking</span>
+            <span>Winner management</span>
+            <span>Operational clarity</span>
+          </div>
+        </div>
+        <div class="product-spotlight-stats">
+          <div class="product-stat">
+            <span class="product-stat-value">5-step</span>
+            <span class="product-stat-label">guided flow from setup to ledger</span>
+          </div>
+          <div class="product-stat">
+            <span class="product-stat-value">Tie-aware</span>
+            <span class="product-stat-label">shared-rank payouts handled clearly</span>
+          </div>
+          <div class="product-stat">
+            <span class="product-stat-value">Washout ready</span>
+            <span class="product-stat-label">equal refund handling for cancelled games</span>
+          </div>
+          <div class="product-stat">
+            <span class="product-stat-value">Live net</span>
+            <span class="product-stat-label">spent, won, and net always visible</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="grid">
+      <div class="section-heading">
+        <p class="eyebrow">Core Features</p>
+        <h2>What teams and friend groups can do with it</h2>
+      </div>
+      <div class="grid-cards">
+        <article class="card">
+          <div class="card-top">
+            <p class="card-label">League Setup</p>
+            <span class="pill mini ghost">Step 1</span>
+          </div>
+          <h3>Set the rules once</h3>
+          <p>Define the league name, tournament, entry fee, active player count, and default payout ladder up front.</p>
+          <div class="tags">
+            <span>Entry fee</span><span>Player count</span><span>Payout rules</span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-top">
+            <p class="card-label">Match Logging</p>
+            <span class="pill mini ghost">Step 2</span>
+          </div>
+          <h3>Capture matches and exceptions</h3>
+          <p>Log match dates and teams, then use optional override settings when payout structures differ from the
+            default league rules.</p>
+          <div class="tags">
+            <span>Dates</span><span>Teams</span><span>Overrides</span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-top">
+            <p class="card-label">Winner Handling</p>
+            <span class="pill mini ghost">Step 3</span>
+          </div>
+          <h3>Assign payouts rank by rank</h3>
+          <p>Use searchable inputs to assign winners, handle ties cleanly, and process cancelled matches without making
+            payout calculations by hand.</p>
+          <div class="tags">
+            <span>Searchable inputs</span><span>Ties</span><span>Refunds</span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-top">
+            <p class="card-label">Ledger View</p>
+            <span class="pill mini ghost">Step 4</span>
+          </div>
+          <h3>Finish with a clear balance sheet</h3>
+          <p>Every player can be understood through one live ledger view showing spent, won, and net across the run.</p>
+          <div class="tags">
+            <span>Spent</span><span>Won</span><span>Net</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="section-heading">
+        <p class="eyebrow">Workflow</p>
+        <h2>How the product moves from setup to settlement</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="dot"></span>
+          <div>
+            <p class="timeline-label">01 • Setup</p>
+            <h3>Create the league structure</h3>
+            <p>Capture the fee model, active player count, and payout distribution that define how your group will run.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="dot"></span>
+          <div>
+            <p class="timeline-label">02 • Players</p>
+            <h3>Add the recurring player list</h3>
+            <p>Store everyone once and reuse the same participants across matches rather than rebuilding the list each time.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="dot"></span>
+          <div>
+            <p class="timeline-label">03 • Match Day</p>
+            <h3>Log results and edge cases</h3>
+            <p>Handle normal results, ties, overrides, and washouts in one place so the settlement path stays consistent.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="dot"></span>
+          <div>
+            <p class="timeline-label">04 • Ledger</p>
+            <h3>Read the financial picture clearly</h3>
+            <p>End every match cycle with a transparent view of who spent what, who won what, and how balances changed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta product-cta">
+      <div>
+        <p class="eyebrow">Launch League Ledger</p>
+        <h2>Open the app when you're ready to run the next match properly.</h2>
+        <p class="hint">This is now the correct launch point: learn what it does here, then move into the live app.</p>
+      </div>
+      <div class="product-cta-actions">
+        <a class="pill dark-pill" href="https://league.dhaneshlabs.com" target="_blank" rel="noreferrer">Launch App</a>
+        <a class="pill ghost dark-ghost" href="/products">Back to Products</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand foot-brand" href="/" aria-label="Go to home">
+      <img src="/public/assets/logo.png" alt="Dhanesh Labs logo" class="logo" />
+      <div>
+        <span class="brand-name">Dhanesh Labs</span>
+        <span class="brand-tag">Code • Create • Wander</span>
+      </div>
+    </a>
+    <div class="foot-links">
+      <a href="/">Home</a>
+      <a href="/studio">Studio</a>
+      <a href="/products">Products</a>
+      <a href="/content">Content</a>
+      <a href="/travel">Travel</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <p class="foot-note">Built with ❤️ on Vercel · 2026</p>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+
+</html>

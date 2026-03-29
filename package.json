@@ -2,14 +2,11 @@
   "name": "dhaneshlabs.com",
   "version": "1.0.0",
   "description": "The official DhaneshLabs website",
-  "main": "index.js",
+  "main": "server.local.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.local.js",
     "build": "echo 'Build complete'",
-    "dev": "node index.js"
-  },
-  "dependencies": {
-    "express": "^4.18.2"
+    "dev": "node server.local.js"
   },
   "keywords": [
     "ai",
