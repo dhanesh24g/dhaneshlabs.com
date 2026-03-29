@@ -138,21 +138,33 @@ body {
 }
 
 .nav nav a {
+  display: inline-flex;
+  align-items: center;
   color: var(--muted);
   margin: 0 10px;
+  padding: 6px 0;
   text-decoration: none;
   font-weight: 600;
   letter-spacing: 0.01em;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
 }
 
 .nav nav a:hover {
   color: var(--nav-link-active);
+  transform: translateY(-2px);
+  opacity: 0.96;
 }
 
 .nav nav a.active {
   color: var(--nav-link-active);
   position: relative;
+}
+
+.nav nav a:focus-visible {
+  color: var(--nav-link-active);
+  transform: translateY(-2px);
+  outline: 2px solid var(--accent-solid);
+  outline-offset: 3px;
 }
 
 .nav nav a.active::after {
@@ -1084,6 +1096,13 @@ html[data-theme='light'] .pill.ghost {
   box-shadow: 0 8px 18px rgba(16, 28, 74, 0.06);
 }
 
+html[data-theme='light'] .nav nav a:hover,
+html[data-theme='light'] .nav nav a.active,
+html[data-theme='light'] .nav nav a:focus-visible {
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 10px 22px rgba(36, 77, 227, 0.08);
+}
+
 html[data-theme='light'] .pill.ghost:hover {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(244, 248, 255, 0.98));
   color: #1c2c53;
@@ -1299,6 +1318,13 @@ section {
     display: none;
   }
 
+  .nav nav a:hover,
+  .nav nav a.active,
+  .nav nav a:focus-visible {
+    background: transparent;
+    box-shadow: none;
+  }
+
   .nav-actions .pill {
     padding: 8px 12px;
   }
@@ -1380,6 +1406,14 @@ section {
 
   .nav nav a.active::after {
     display: none;
+  }
+
+  .nav nav a:hover,
+  .nav nav a.active,
+  .nav nav a:focus-visible {
+    transform: translateY(-1px);
+    background: var(--chip-bg);
+    box-shadow: none;
   }
 
   main {
