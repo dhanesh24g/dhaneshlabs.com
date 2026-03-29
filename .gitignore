@@ -206,3 +206,8 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 .vercel
+
+# Node / frontend local deps
+node_modules/
+package-lock.json
+npm-debug.log*

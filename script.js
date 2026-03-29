@@ -10,6 +10,17 @@ const status = [
   'Edge deployment checklist',
   'Streaming UI revamp'
 ];
+const productDrops = [
+  'League setup flow',
+  'Tie-aware payout logic',
+  'Washout refund handling',
+  'Live player ledger'
+];
+const productStatus = [
+  'League Ledger',
+  'Payout workflow polish',
+  'Settlement visibility'
+];
 const THEME_STORAGE_KEY = 'dhaneshlabs-theme';
 
 function pick(array) { return array[Math.floor(Math.random() * array.length)]; }
@@ -19,8 +30,11 @@ function setDynamicBits() {
   const pill = document.getElementById('status-pill');
   const now = new Date();
   const dateStr = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-  if (latest) latest.textContent = `${pick(drops)} · updated ${dateStr}`;
-  if (pill) pill.textContent = pick(status);
+  const isProductsPage = window.location.pathname === '/products' || window.location.pathname.endsWith('/products.html');
+  const activeDrops = isProductsPage ? productDrops : drops;
+  const activeStatus = isProductsPage ? productStatus : status;
+  if (latest) latest.textContent = `${pick(activeDrops)} · updated ${dateStr}`;
+  if (pill) pill.textContent = pick(activeStatus);
 }
 
 function handleScrollReveal() {

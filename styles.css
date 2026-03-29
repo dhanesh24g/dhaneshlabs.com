@@ -279,6 +279,10 @@ main {
   align-items: center;
 }
 
+.product-hero {
+  padding-top: 8px;
+}
+
 .hero-content h1 {
   font-family: var(--font-heading);
   font-size: clamp(42px, 6vw, 64px);
@@ -474,6 +478,10 @@ main {
   font-size: 13px;
 }
 
+.product-panel {
+  min-height: 320px;
+}
+
 @keyframes float {
 
   0%,
@@ -501,6 +509,50 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 18px;
+}
+
+.product-spotlight {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.9fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+.product-spotlight h3 {
+  font-size: clamp(26px, 4vw, 36px);
+  margin: 14px 0 10px;
+}
+
+.product-spotlight p {
+  max-width: 62ch;
+}
+
+.product-spotlight-stats {
+  display: grid;
+  gap: 14px;
+}
+
+.product-stat {
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.product-stat-value {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.product-stat-label {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  line-height: 1.5;
 }
 
 .card {
@@ -717,6 +769,33 @@ main {
   cursor: pointer;
 }
 
+.product-cta {
+  margin-top: 0;
+}
+
+.product-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-start;
+}
+
+.dark-pill {
+  background: #05060f;
+  color: #eef2ff;
+  box-shadow: 0 18px 40px rgba(5, 6, 15, 0.28);
+}
+
+.dark-pill:hover {
+  box-shadow: 0 20px 44px rgba(5, 6, 15, 0.34);
+}
+
+.dark-ghost {
+  border-color: rgba(5, 6, 15, 0.18);
+  color: #05060f;
+  background: rgba(255, 255, 255, 0.28);
+}
+
 .footer {
   margin-top: 60px;
   border-top: 1px solid var(--border);
@@ -922,6 +1001,10 @@ section {
     margin-top: 12px;
   }
 
+  .product-spotlight {
+    grid-template-columns: 1fr;
+  }
+
   .nav {
     grid-template-columns: 1fr auto;
     gap: 12px;
@@ -968,6 +1051,16 @@ section {
   .panel,
   .card {
     backdrop-filter: none;
+  }
+
+  .product-cta-actions {
+    align-items: stretch;
+  }
+
+  .product-cta-actions .pill {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 
   .brand-name {
