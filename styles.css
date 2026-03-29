@@ -138,21 +138,33 @@ body {
 }
 
 .nav nav a {
+  display: inline-flex;
+  align-items: center;
   color: var(--muted);
   margin: 0 10px;
+  padding: 6px 0;
   text-decoration: none;
   font-weight: 600;
   letter-spacing: 0.01em;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
 }
 
 .nav nav a:hover {
   color: var(--nav-link-active);
+  transform: translateY(-2px);
+  opacity: 0.96;
 }
 
 .nav nav a.active {
   color: var(--nav-link-active);
   position: relative;
+}
+
+.nav nav a:focus-visible {
+  color: var(--nav-link-active);
+  transform: translateY(-2px);
+  outline: 2px solid var(--accent-solid);
+  outline-offset: 3px;
 }
 
 .nav nav a.active::after {
@@ -259,10 +271,19 @@ body {
 }
 
 .text-link {
+  display: inline-flex;
+  align-items: center;
   color: var(--link);
   text-decoration: none;
   font-weight: 600;
   margin-left: 6px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.text-link:hover,
+.text-link:focus-visible {
+  color: var(--nav-link-active);
+  transform: translateX(2px);
 }
 
 main {
@@ -361,6 +382,7 @@ html[data-theme='light'] .product-entry-live {
 
 .product-entry p {
   margin: 0;
+  line-height: 1.58;
 }
 
 .product-entry-meta,
@@ -485,6 +507,14 @@ html[data-theme='light'] .product-entry-live {
   justify-content: center;
   cursor: pointer;
   pointer-events: auto;
+}
+
+.product-action-row a:focus-visible,
+.hero-cta a:focus-visible,
+.cta-form button:focus-visible,
+.cta-form input:focus-visible {
+  outline: 2px solid var(--accent-solid);
+  outline-offset: 3px;
 }
 
 .product-state {
@@ -1066,6 +1096,13 @@ html[data-theme='light'] .pill.ghost {
   box-shadow: 0 8px 18px rgba(16, 28, 74, 0.06);
 }
 
+html[data-theme='light'] .nav nav a:hover,
+html[data-theme='light'] .nav nav a.active,
+html[data-theme='light'] .nav nav a:focus-visible {
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 10px 22px rgba(36, 77, 227, 0.08);
+}
+
 html[data-theme='light'] .pill.ghost:hover {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(244, 248, 255, 0.98));
   color: #1c2c53;
@@ -1148,6 +1185,12 @@ html[data-theme='light'] .dark-pill:hover {
   color: var(--text);
   text-decoration: none;
   font-weight: 600;
+}
+
+.foot-links a:focus-visible {
+  outline: 2px solid var(--accent-solid);
+  outline-offset: 3px;
+  border-radius: 10px;
 }
 
 .theme-control {
@@ -1275,8 +1318,47 @@ section {
     display: none;
   }
 
+  .nav nav a:hover,
+  .nav nav a.active,
+  .nav nav a:focus-visible {
+    background: transparent;
+    box-shadow: none;
+  }
+
   .nav-actions .pill {
     padding: 8px 12px;
+  }
+}
+
+@media (max-width: 980px) {
+  main {
+    gap: 80px;
+  }
+
+  .hero {
+    gap: 24px;
+  }
+
+  .product-entry h3 {
+    font-size: 24px;
+  }
+
+  .product-spotlight {
+    grid-template-columns: 1fr;
+  }
+
+  .product-spotlight p {
+    max-width: none;
+  }
+
+  .product-spotlight-stats {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .floating-card {
+    right: 0;
+    bottom: -18px;
+    max-width: min(320px, 88%);
   }
 }
 
@@ -1326,25 +1408,92 @@ section {
     display: none;
   }
 
+  .nav nav a:hover,
+  .nav nav a.active,
+  .nav nav a:focus-visible {
+    transform: translateY(-1px);
+    background: var(--chip-bg);
+    box-shadow: none;
+  }
+
+  main {
+    gap: 72px;
+    margin-top: 28px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(36px, 12vw, 52px);
+    line-height: 1.04;
+  }
+
+  .lede {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
   .hero-panel .floating-card {
     position: static;
     margin-top: 12px;
+    max-width: 100%;
+    animation: none;
   }
 
   .product-spotlight {
     grid-template-columns: 1fr;
   }
 
+  .product-directory,
+  .grid-cards,
+  .showcase-grid,
+  .travel-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-entry {
+    gap: 12px;
+  }
+
+  .product-entry h3 {
+    font-size: 24px;
+  }
+
   .product-entry-footer {
     align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .product-entry-note {
+    display: none;
   }
 
   .product-action-row {
     width: 100%;
+    align-items: stretch;
   }
 
   .product-entry-topline {
-    align-items: stretch;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .product-entry-head,
+  .product-entry-footer,
+  .product-action-row .pill,
+  .product-entry-topline .product-action-row-compact {
+    width: 100%;
+  }
+
+  .product-entry-topline .product-action-row-compact .premium-ghost,
+  .product-entry-footer .product-action-row .premium-ghost,
+  .product-spotlight .product-action-row .pill {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 
   .product-inline-cta {
@@ -1365,8 +1514,10 @@ section {
     align-items: stretch;
   }
 
-  .hero-cta .pill {
+  .hero-cta .pill,
+  .hero-cta .text-link {
     text-align: center;
+    justify-content: center;
   }
 
   .nav-actions {
@@ -1399,6 +1550,40 @@ section {
     backdrop-filter: none;
   }
 
+  .panel,
+  .card,
+  .tile,
+  .travel-card,
+  .cta {
+    padding: 16px;
+  }
+
+  .card-top,
+  .tile-head {
+    align-items: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .chip-row,
+  .tags {
+    gap: 7px;
+  }
+
+  .chip,
+  .tags span {
+    font-size: 12px;
+    padding: 6px 9px;
+  }
+
+  .meta {
+    grid-template-columns: 1fr;
+  }
+
+  .flow {
+    grid-template-columns: 1fr;
+  }
+
   .product-cta-actions {
     align-items: stretch;
   }
@@ -1415,5 +1600,76 @@ section {
 
   .brand-tag {
     font-size: 11px;
+  }
+
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0 4vw 72px;
+  }
+
+  .nav {
+    margin: 0 -4vw;
+    padding: 18px 4vw;
+  }
+
+  .brand-tag {
+    display: none;
+  }
+
+  .brand-name {
+    font-size: 17px;
+  }
+
+  .nav nav {
+    gap: 6px;
+  }
+
+  .nav nav a {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(32px, 11vw, 44px);
+  }
+
+  .product-entry h3,
+  .product-spotlight h3,
+  .section-heading h2 {
+    line-height: 1.12;
+  }
+
+  .product-readmore {
+    font-size: 13px;
+  }
+
+  .cta input {
+    min-width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  section {
+    opacity: 1;
+    transform: none;
   }
 }

@@ -145,11 +145,6 @@ function injectThemeToggle() {
   const navActions = document.querySelector('.nav-actions');
   if (!navActions || document.getElementById('theme-toggle')) return;
 
-  const appsLink = navActions.querySelector('a[href^="https://apps.dhaneshlabs.com"]');
-  if (appsLink) {
-    appsLink.textContent = 'Apps Hub';
-  }
-
   const themeControl = document.createElement('div');
   themeControl.className = 'theme-control';
 
