@@ -283,6 +283,79 @@ main {
   padding-top: 8px;
 }
 
+.product-directory {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.product-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.product-entry-live {
+  background:
+    radial-gradient(circle at top right, rgba(61, 217, 235, 0.18), transparent 35%),
+    var(--card);
+}
+
+.product-entry-head,
+.product-entry-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.product-entry h3 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.product-entry p {
+  margin: 0;
+}
+
+.product-entry-meta,
+.product-entry-note {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.product-state {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 11px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.state-live {
+  background: rgba(92, 232, 160, 0.14);
+  border-color: rgba(92, 232, 160, 0.34);
+  color: #92f2bf;
+}
+
+.state-beta {
+  background: rgba(61, 217, 235, 0.12);
+  border-color: rgba(61, 217, 235, 0.3);
+  color: #9befff;
+}
+
+.state-soon {
+  background: rgba(255, 209, 102, 0.14);
+  border-color: rgba(255, 209, 102, 0.32);
+  color: #ffe09b;
+}
+
 .hero-content h1 {
   font-family: var(--font-heading);
   font-size: clamp(42px, 6vw, 64px);
@@ -796,6 +869,24 @@ main {
   background: rgba(255, 255, 255, 0.28);
 }
 
+html[data-theme='light'] .state-live {
+  background: rgba(5, 150, 105, 0.12);
+  border-color: rgba(5, 150, 105, 0.22);
+  color: #047857;
+}
+
+html[data-theme='light'] .state-beta {
+  background: rgba(36, 77, 227, 0.1);
+  border-color: rgba(36, 77, 227, 0.18);
+  color: #244de3;
+}
+
+html[data-theme='light'] .state-soon {
+  background: rgba(217, 119, 6, 0.12);
+  border-color: rgba(217, 119, 6, 0.22);
+  color: #b45309;
+}
+
 .footer {
   margin-top: 60px;
   border-top: 1px solid var(--border);
@@ -1003,6 +1094,10 @@ section {
 
   .product-spotlight {
     grid-template-columns: 1fr;
+  }
+
+  .product-entry-footer {
+    align-items: flex-start;
   }
 
   .nav {

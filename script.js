@@ -11,12 +11,23 @@ const status = [
   'Streaming UI revamp'
 ];
 const productDrops = [
+  'Products hub structure',
+  'League Ledger detail page',
+  'Product labeling system',
+  'Scalable product routing'
+];
+const productStatus = [
+  'Products Hub',
+  'League Ledger featured',
+  'Live and beta lineup'
+];
+const leagueLedgerDrops = [
   'League setup flow',
   'Tie-aware payout logic',
   'Washout refund handling',
   'Live player ledger'
 ];
-const productStatus = [
+const leagueLedgerStatus = [
   'League Ledger',
   'Payout workflow polish',
   'Settlement visibility'
@@ -30,9 +41,11 @@ function setDynamicBits() {
   const pill = document.getElementById('status-pill');
   const now = new Date();
   const dateStr = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-  const isProductsPage = window.location.pathname === '/products' || window.location.pathname.endsWith('/products.html');
-  const activeDrops = isProductsPage ? productDrops : drops;
-  const activeStatus = isProductsPage ? productStatus : status;
+  const pathname = window.location.pathname;
+  const isProductsHub = pathname === '/products' || pathname.endsWith('/products.html');
+  const isLeagueLedgerPage = pathname === '/products/league-ledger' || pathname.endsWith('/products/league-ledger.html');
+  const activeDrops = isLeagueLedgerPage ? leagueLedgerDrops : isProductsHub ? productDrops : drops;
+  const activeStatus = isLeagueLedgerPage ? leagueLedgerStatus : isProductsHub ? productStatus : status;
   if (latest) latest.textContent = `${pick(activeDrops)} · updated ${dateStr}`;
   if (pill) pill.textContent = pick(activeStatus);
 }

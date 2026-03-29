@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      try {
+        var key = "dhaneshlabs-theme";
+        var stored = localStorage.getItem(key);
+        var theme = (stored === "light" || stored === "dark")
+          ? stored
+          : (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (e) {}
+    })();
+  </script>
+  <title>Code Assistant | Dhanesh Labs</title>
+  <meta name="description" content="Code Assistant is a beta Dhanesh Labs product focused on code review, workflow guidance, and developer support.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/png" href="/public/assets/favicon.png">
+</head>
+
+<body>
+  <div class="noise"></div>
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+  <header class="nav">
+    <a class="brand" href="/" aria-label="Go to home">
+      <img src="/public/assets/logo.png" alt="Dhanesh Labs logo" class="logo" />
+      <div>
+        <span class="brand-name">Dhanesh Labs</span>
+        <span class="brand-tag">Code • Create • Wander</span>
+      </div>
+    </a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/studio">Studio</a>
+      <a href="/products" class="active">Products</a>
+      <a href="/content">Content</a>
+      <a href="/travel">Travel</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="pill" href="https://apps.dhaneshlabs.com" target="_blank" rel="noreferrer">Apps Hub</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero product-hero">
+      <div class="hero-content">
+        <p class="eyebrow">Beta Product • Code Assistant</p>
+        <h1>Developer workflow help, <span class="accent">currently in beta.</span></h1>
+        <p class="lede">This page is intentionally live so the product directory never contains dead buttons. Full product content will expand here as Code Assistant matures.</p>
+        <div class="hero-cta">
+          <a class="pill" href="/contact">Request Access</a>
+          <a class="pill ghost" href="/products">Back to Products</a>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="panel glass product-panel">
+          <div class="panel-header">
+            <span class="dot green"></span>
+            <span class="dot amber"></span>
+            <span class="dot red"></span>
+            <span class="panel-title">Code Assistant</span>
+          </div>
+          <div class="panel-body">
+            <div class="chip-row">
+              <span class="chip">Beta</span>
+              <span class="chip">Code review</span>
+              <span class="chip">Workflow guidance</span>
+            </div>
+            <div class="status">
+              <span class="status-label">Product state:</span>
+              <span class="status-pill">Beta</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand foot-brand" href="/" aria-label="Go to home">
+      <img src="/public/assets/logo.png" alt="Dhanesh Labs logo" class="logo" />
+      <div>
+        <span class="brand-name">Dhanesh Labs</span>
+        <span class="brand-tag">Code • Create • Wander</span>
+      </div>
+    </a>
+    <div class="foot-links">
+      <a href="/">Home</a>
+      <a href="/studio">Studio</a>
+      <a href="/products">Products</a>
+      <a href="/content">Content</a>
+      <a href="/travel">Travel</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <p class="foot-note">Built with ❤️ on Vercel · 2026</p>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+
+</html>
