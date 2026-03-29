@@ -32,6 +32,26 @@ const leagueLedgerStatus = [
   'Payout workflow polish',
   'Settlement visibility'
 ];
+const codeAssistantDrops = [
+  'Beta access flow',
+  'Review support direction',
+  'Workflow guidance shaping'
+];
+const codeAssistantStatus = [
+  'Code Assistant beta',
+  'Request access open',
+  'Beta page live'
+];
+const dashboardProDrops = [
+  'Waitlist setup',
+  'Analytics concept shaping',
+  'Coming-soon page live'
+];
+const dashboardProStatus = [
+  'Dashboard Pro coming soon',
+  'Waitlist active',
+  'Planned analytics release'
+];
 const THEME_STORAGE_KEY = 'dhaneshlabs-theme';
 
 function pick(array) { return array[Math.floor(Math.random() * array.length)]; }
@@ -44,8 +64,26 @@ function setDynamicBits() {
   const pathname = window.location.pathname;
   const isProductsHub = pathname === '/products' || pathname.endsWith('/products.html');
   const isLeagueLedgerPage = pathname === '/products/league-ledger' || pathname.endsWith('/products/league-ledger.html');
-  const activeDrops = isLeagueLedgerPage ? leagueLedgerDrops : isProductsHub ? productDrops : drops;
-  const activeStatus = isLeagueLedgerPage ? leagueLedgerStatus : isProductsHub ? productStatus : status;
+  const isCodeAssistantPage = pathname === '/products/code-assistant' || pathname.endsWith('/products/code-assistant.html');
+  const isDashboardProPage = pathname === '/products/dashboard-pro' || pathname.endsWith('/products/dashboard-pro.html');
+  const activeDrops = isLeagueLedgerPage
+    ? leagueLedgerDrops
+    : isCodeAssistantPage
+      ? codeAssistantDrops
+      : isDashboardProPage
+        ? dashboardProDrops
+        : isProductsHub
+          ? productDrops
+          : drops;
+  const activeStatus = isLeagueLedgerPage
+    ? leagueLedgerStatus
+    : isCodeAssistantPage
+      ? codeAssistantStatus
+      : isDashboardProPage
+        ? dashboardProStatus
+        : isProductsHub
+          ? productStatus
+          : status;
   if (latest) latest.textContent = `${pick(activeDrops)} · updated ${dateStr}`;
   if (pill) pill.textContent = pick(activeStatus);
 }
@@ -61,6 +99,25 @@ function handleScrollReveal() {
   }, { threshold: 0.2 });
 
   document.querySelectorAll('section').forEach(section => observer.observe(section));
+}
+
+function initializeClickableProductCards() {
+  document.querySelectorAll('[data-card-href]').forEach(card => {
+    const href = card.getAttribute('data-card-href');
+    if (!href) return;
+
+    card.addEventListener('click', event => {
+      if (event.target.closest('a, button')) return;
+      window.location.href = href;
+    });
+
+    card.addEventListener('keydown', event => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      if (event.target.closest('a, button') && event.target !== card) return;
+      event.preventDefault();
+      window.location.href = href;
+    });
+  });
 }
 
 function getPreferredTheme() {
@@ -117,4 +174,5 @@ window.addEventListener('DOMContentLoaded', () => {
   initializeTheme();
   setDynamicBits();
   handleScrollReveal();
+  initializeClickableProductCards();
 });

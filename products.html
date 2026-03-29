@@ -125,11 +125,6 @@
             </div>
           </div>
         </div>
-        <div class="floating-card">
-          <p class="floating-label">Featured release</p>
-          <p class="floating-title">League Ledger</p>
-          <p class="floating-meta">Now available as a dedicated product detail page.</p>
-        </div>
       </div>
     </section>
 
@@ -149,27 +144,25 @@
           <p>Instead of linking straight from the hub into the app without context, visitors can now understand the
             product first, explore the workflow, and then launch League Ledger from its dedicated page.</p>
           <div class="tags">
-            <span>Featured</span>
             <span>Live app</span>
             <span>Dedicated page</span>
-            <span>Premium flow</span>
+            <span>Featured now</span>
           </div>
         </div>
         <div class="product-spotlight-stats">
           <div class="product-stat">
-            <span class="product-stat-value">Current</span>
-            <span class="product-stat-label">featured launch on the product hub</span>
+            <span class="product-stat-value">Live now</span>
+            <span class="product-stat-label">current featured release on the hub</span>
           </div>
           <div class="product-stat">
-            <span class="product-stat-value">/products/league-ledger</span>
-            <span class="product-stat-label">dedicated info page before app entry</span>
+            <span class="product-stat-value">Two-step path</span>
+            <span class="product-stat-label">view the product page or launch the app directly</span>
           </div>
           <div class="product-stat">
-            <span class="product-stat-value">Launch ready</span>
-            <span class="product-stat-label">CTA points to the live app from the product page</span>
-          </div>
-          <div class="product-stat">
-            <a class="pill mini" href="/products/league-ledger">View League Ledger</a>
+            <div class="product-action-row">
+              <a class="pill mini" href="/products/league-ledger">View League Ledger</a>
+              <a class="pill mini ghost premium-ghost" href="https://league.dhaneshlabs.com" target="_blank" rel="noreferrer">Launch Product</a>
+            </div>
           </div>
         </div>
       </article>
@@ -182,9 +175,14 @@
         <p class="hint">This page stays stable as your product line grows. New launches become additions, not rewrites.</p>
       </div>
       <div class="product-directory">
-        <article class="card product-entry product-entry-live">
+        <article class="card product-entry product-entry-live product-entry-clickable" tabindex="0" role="link" aria-label="View League Ledger product page" data-card-href="/products/league-ledger">
           <div class="product-entry-head">
-            <span class="product-state state-live">Live</span>
+            <div class="product-entry-topline">
+              <span class="product-state state-live">Live</span>
+              <div class="product-action-row product-action-row-compact">
+                <a class="pill mini ghost premium-ghost" href="https://league.dhaneshlabs.com" target="_blank" rel="noreferrer">Launch Product ↗</a>
+              </div>
+            </div>
             <span class="product-entry-meta">Fantasy fintech</span>
           </div>
           <h3>League Ledger</h3>
@@ -195,10 +193,7 @@
             <span>Tie-aware</span>
             <span>Live ledger</span>
           </div>
-          <div class="product-entry-footer">
-            <a class="pill mini" href="/products/league-ledger">View Product</a>
-            <span class="product-entry-note">Latest launch • dedicated detail page + app CTA</span>
-          </div>
+          <div class="card-hover-hint" aria-hidden="true">Click on the product to know more</div>
         </article>
         <article class="card product-entry">
           <div class="product-entry-head">
@@ -214,7 +209,10 @@
             <span>Workflow</span>
           </div>
           <div class="product-entry-footer">
-            <a class="pill mini ghost" href="/products/code-assistant">View Beta Page</a>
+            <div class="product-action-row">
+              <a class="pill mini ghost premium-ghost" href="/products/code-assistant">View Beta Page</a>
+              <a class="pill mini ghost premium-ghost" href="/contact">Request Access</a>
+            </div>
             <span class="product-entry-note">Beta detail page is live as a product placeholder</span>
           </div>
         </article>
@@ -232,7 +230,10 @@
             <span>Monitoring</span>
           </div>
           <div class="product-entry-footer">
-            <a class="pill mini ghost" href="/products/dashboard-pro">View Coming Soon Page</a>
+            <div class="product-action-row">
+              <a class="pill mini ghost premium-ghost" href="/products/dashboard-pro">View Coming Soon Page</a>
+              <a class="pill mini ghost premium-ghost" href="/contact">Join Waitlist</a>
+            </div>
             <span class="product-entry-note">Coming soon page is active for future updates</span>
           </div>
         </article>
