@@ -7,19 +7,30 @@
   ],
   "routes": [
     {
+      "src": "/studio(?:\\.html)?",
+      "status": 308,
+      "headers": {
+        "Location": "/"
+      }
+    },
+    {
+      "src": "/travel(?:\\.html)?",
+      "status": 308,
+      "headers": {
+        "Location": "/"
+      }
+    },
+    {
+      "src": "/apps(?:\\.html)?",
+      "status": 308,
+      "headers": {
+        "Location": "/"
+      }
+    },
+    {
       "handle": "filesystem"
     },
     {
-      "src": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "apps.dhaneshlabs.com"
-        }
-      ],
-      "dest": "/apps.html"
-    },
-    {
       "src": "/(.*)",
       "has": [
         {
@@ -27,7 +38,10 @@
           "value": "apps.dhaneshlabs.com"
         }
       ],
-      "dest": "/apps.html"
+      "status": 308,
+      "headers": {
+        "Location": "https://www.dhaneshlabs.com/products"
+      }
     },
     {
       "src": "/",
@@ -48,10 +62,6 @@
         }
       ],
       "dest": "/tools.html"
-    },
-    {
-      "src": "/studio",
-      "dest": "/studio.html"
     },
     {
       "src": "/products/league-ledger",
@@ -70,20 +80,12 @@
       "dest": "/products.html"
     },
     {
-      "src": "/apps",
-      "dest": "/apps.html"
-    },
-    {
       "src": "/tools",
       "dest": "/tools.html"
     },
     {
       "src": "/content",
       "dest": "/content.html"
-    },
-    {
-      "src": "/travel",
-      "dest": "/travel.html"
     },
     {
       "src": "/contact",

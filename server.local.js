@@ -7,15 +7,12 @@ const ROOT = __dirname;
 
 const routeMap = {
   '/': 'index.html',
-  '/studio': 'studio.html',
   '/products': 'products.html',
   '/products/league-ledger': 'products/league-ledger.html',
   '/products/code-assistant': 'products/code-assistant.html',
   '/products/dashboard-pro': 'products/dashboard-pro.html',
-  '/apps': 'apps.html',
   '/tools': 'tools.html',
   '/content': 'content.html',
-  '/travel': 'travel.html',
   '/contact': 'contact.html'
 };
 
@@ -53,6 +50,19 @@ function sendFile(res, filePath) {
 const server = http.createServer((req, res) => {
   const url = new URL(req.url, `http://${req.headers.host}`);
   const pathname = decodeURIComponent(url.pathname);
+
+  if (
+    pathname === '/studio' ||
+    pathname === '/travel' ||
+    pathname === '/apps' ||
+    pathname === '/studio.html' ||
+    pathname === '/travel.html' ||
+    pathname === '/apps.html'
+  ) {
+    res.writeHead(302, { Location: '/' });
+    res.end();
+    return;
+  }
 
   if (routeMap[pathname]) {
     sendFile(res, path.join(ROOT, routeMap[pathname]));
