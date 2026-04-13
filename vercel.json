@@ -28,34 +28,11 @@
       }
     },
     {
-      "src": "/tools(?:\\.html)?",
-      "status": 308,
-      "headers": {
-        "Location": "/products"
-      }
-    },
-    {
-      "handle": "filesystem"
-    },
-    {
       "src": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "apps.dhaneshlabs.com"
-        }
-      ],
-      "status": 308,
-      "headers": {
-        "Location": "https://www.dhaneshlabs.com/products"
-      }
-    },
-    {
-      "src": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "tools.dhaneshlabs.com"
         }
       ],
       "status": 308,
@@ -90,6 +67,9 @@
     {
       "src": "/index.html",
       "dest": "/"
+    },
+    {
+      "handle": "filesystem"
     },
     {
       "src": "/(.*)",
