@@ -1100,18 +1100,18 @@ html[data-theme='light'] .product-entry-ai {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 16px;
   align-items: center;
-  color: #05060f;
+  color: var(--text);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
 }
 
 .cta .hint,
 .cta .eyebrow {
-  color: rgba(5, 6, 15, 0.7);
+  color: rgba(230, 235, 247, 0.78);
 }
 
 .cta h2 {
   margin: 6px 0 8px;
-  color: #05060f;
+  color: var(--text);
 }
 
 .cta-form {
@@ -1257,6 +1257,19 @@ html[data-theme='light'] .dark-ghost {
   color: #213056;
   border-color: rgba(26, 37, 72, 0.12);
   box-shadow: 0 8px 18px rgba(16, 28, 74, 0.06);
+}
+
+html[data-theme='light'] .cta {
+  color: #05060f;
+}
+
+html[data-theme='light'] .cta h2 {
+  color: #05060f;
+}
+
+html[data-theme='light'] .cta .hint,
+html[data-theme='light'] .cta .eyebrow {
+  color: rgba(5, 6, 15, 0.7);
 }
 
 html[data-theme='light'] .dark-pill {
