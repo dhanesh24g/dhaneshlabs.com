@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZDJLNDFYR9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZDJLNDFYR9');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      try {
+        var key = "dhaneshlabs-theme";
+        var stored = localStorage.getItem(key);
+        var theme = (stored === "light" || stored === "dark")
+          ? stored
+          : (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (e) { }
+    })();
+  </script>
+  <title>Dhanesh Labs | AI Interview Agent</title>
+  <meta name="description"
+    content="AI Interview Agent by Dhanesh Labs is a live product that turns a job posting into researched, voice-first mock interview practice with ranked questions and adaptive feedback.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dhanesh Labs | AI Interview Agent">
+  <meta property="og:description"
+    content="AI Interview Agent is a live product that turns a job posting into researched, voice-first mock interview practice with ranked questions and adaptive feedback.">
+  <meta property="og:image" content="/public/assets/logo.png">
+  <meta property="og:url" content="https://www.dhaneshlabs.com/products/ai-interview-agent">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dhanesh Labs | AI Interview Agent">
+  <meta name="twitter:description"
+    content="AI Interview Agent is a live product that turns a job posting into researched, voice-first mock interview practice with ranked questions and adaptive feedback.">
+  <meta name="twitter:image" content="/public/assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/png" href="/public/assets/favicon.png">
+</head>
+
+<body>
+  <div class="noise"></div>
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+  <header class="nav">
+    <a class="brand" href="/" aria-label="Go to home">
+      <img src="/public/assets/logo.png" alt="Dhanesh Labs logo" class="logo" />
+      <div>
+        <span class="brand-name">Dhanesh Labs</span>
+        <span class="brand-tag">Code • Create • Wander</span>
+      </div>
+    </a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/products" class="active">Products</a>
+      <a href="/content">Content</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="nav-actions"></div>
+  </header>
+
+  <main>
+    <section class="hero product-hero">
+      <div class="hero-content">
+        <p class="eyebrow">Live Product • AI Interview Agent</p>
+        <h1>Job-targeted interview practice, <span class="accent">researched before you speak.</span></h1>
+        <p class="lede">AI Interview Agent starts with a live job posting, researches interview signals, builds a
+          ranked question bank, runs a voice-first mock interview, and turns the session into practical feedback.</p>
+        <div class="hero-cta">
+          <a class="pill" href="https://interview.dhaneshlabs.com/" target="_blank" rel="noreferrer">Launch
+            Product</a>
+          <a class="pill ghost" href="/products">Back to Products</a>
+        </div>
+        <div class="meta">
+          <div>
+            <span class="meta-label">Status</span>
+            <span class="meta-value">Live</span>
+          </div>
+          <div>
+            <span class="meta-label">Designed for</span>
+            <span class="meta-value">Job seekers, interview prep, role-specific practice</span>
+          </div>
+          <div>
+            <span class="meta-label">Current focus</span>
+            <span class="meta-value" id="latest-drop">Preparing...</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="panel glass product-panel">
+          <div class="panel-header">
+            <span class="dot green"></span>
+            <span class="dot amber"></span>
+            <span class="dot red"></span>
+            <span class="panel-title">AI Interview Agent</span>
+          </div>
+          <div class="panel-body">
+            <div class="chip-row">
+              <span class="chip">Job extraction</span>
+              <span class="chip">TinyFish research</span>
+              <span class="chip">Voice interview</span>
+              <span class="chip">Feedback report</span>
+            </div>
+            <div class="flow">
+              <div class="flow-node">
+                <span class="node-title">Research</span>
+                <span class="node-sub">Analyze the role and sources</span>
+              </div>
+              <div class="flow-node">
+                <span class="node-title">Interview</span>
+                <span class="node-sub">Practice with spoken answers</span>
+              </div>
+              <div class="flow-node">
+                <span class="node-title">Improve</span>
+                <span class="node-sub">Read scores and prep guidance</span>
+              </div>
+            </div>
+            <div class="status">
+              <span class="status-label">Product state:</span>
+              <span class="status-pill" id="status-pill">AI Interview Agent</span>
+            </div>
+          </div>
+        </div>
+        <div class="floating-card">
+          <p class="floating-label">Voice-ready</p>
+          <p class="floating-title">Built around the job you actually want</p>
+          <p class="floating-meta">The interview begins after the role context is understood.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="section-heading">
+        <p class="eyebrow">Product Summary</p>
+        <h2>What AI Interview Agent actually solves</h2>
+      </div>
+      <article class="card product-spotlight">
+        <div class="product-spotlight-copy">
+          <div class="card-top">
+            <p class="card-label">Live Product</p>
+            <span class="product-state state-live">Live</span>
+          </div>
+          <h3>Move from generic interview prep to role-specific practice.</h3>
+          <p>Most mock interview tools start with generic question lists. AI Interview Agent starts with the job
+            posting, extracts the company and role context, researches likely interview patterns, ranks the strongest
+            questions, and evaluates the candidate's answers in a structured session.</p>
+          <div class="tags">
+            <span>Role-specific</span>
+            <span>Question ranking</span>
+            <span>Real-time evaluation</span>
+            <span>Prep guidance</span>
+          </div>
+        </div>
+        <div class="product-spotlight-stats">
+          <div class="product-stat">
+            <span class="product-stat-value">Job-first</span>
+            <span class="product-stat-label">extracts role title, company, and job description from a posting URL</span>
+          </div>
+          <div class="product-stat">
+            <span class="product-stat-value">Research-backed</span>
+            <span class="product-stat-label">uses targeted web intelligence before generating interview questions</span>
+          </div>
+          <div class="product-stat">
+            <span class="product-stat-value">Voice-ready</span>
+            <span class="product-stat-label">supports spoken practice with editable transcripts before submission</span>
+          </div>
+          <div class="product-stat">
+            <span class="product-stat-value">Feedback loop</span>
+            <span class="product-stat-label">summarizes strengths, gaps, scores, and preparation guidance</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="grid">
+      <div class="section-heading">
+        <p class="eyebrow">Core Features</p>
+        <h2>What candidates can do with it</h2>
+      </div>
+      <div class="grid-cards">
+        <article class="card">
+          <div class="card-top">
+            <p class="card-label">Research</p>
+            <span class="pill mini ghost">Step 1</span>
+          </div>
+          <h3>Start from a live job posting</h3>
+          <p>Submit a role URL and let the backend extract the company, role, and job description before the practice
+            flow begins.</p>
+          <div class="tags">
+            <span>Job URL</span><span>Metadata</span><span>Fallbacks</span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-top">
+            <p class="card-label">Question Bank</p>
+            <span class="pill mini ghost">Step 2</span>
+          </div>
+          <h3>Prepare likely interview questions</h3>
+          <p>Combine source research and job-description inference to create ranked questions that match the target
+            role.</p>
+          <div class="tags">
+            <span>Ranked</span><span>Targeted</span><span>Fallback-aware</span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-top">
+            <p class="card-label">Voice Session</p>
+            <span class="pill mini ghost">Step 3</span>
+          </div>
+          <h3>Practice answers out loud</h3>
+          <p>Use browser speech features for a voice-first interview loop, while keeping text input available for
+            editing and accessibility.</p>
+          <div class="tags">
+            <span>Speech</span><span>Transcript</span><span>Session state</span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-top">
+            <p class="card-label">Feedback</p>
+            <span class="pill mini ghost">Step 4</span>
+          </div>
+          <h3>Leave with a readiness report</h3>
+          <p>Get answer evaluation, overall scoring, strengths, improvement areas, and preparation guidance after the
+            mock interview.</p>
+          <div class="tags">
+            <span>Scores</span><span>Strengths</span><span>Prep tips</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="section-heading">
+        <p class="eyebrow">Workflow</p>
+        <h2>How the product moves from job posting to feedback</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="dot"></span>
+          <div>
+            <p class="timeline-label">01 • Extract</p>
+            <h3>Turn the posting into a job target</h3>
+            <p>The system captures the role context first, with timeout handling and fallback metadata when scraping is
+              unavailable.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="dot"></span>
+          <div>
+            <p class="timeline-label">02 • Research</p>
+            <h3>Collect interview intelligence</h3>
+            <p>Targeted queries look for company, role, and interview-source signals, then continue with partial data if
+              individual sources fail.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="dot"></span>
+          <div>
+            <p class="timeline-label">03 • Practice</p>
+            <h3>Run the interview session</h3>
+            <p>The backend owns turn management and transcript state while the frontend presents the voice-first
+              candidate experience.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="dot"></span>
+          <div>
+            <p class="timeline-label">04 • Improve</p>
+            <h3>Generate the feedback report</h3>
+            <p>The final report turns session answers into scores, improvement areas, strengths, and targeted prep
+              guidance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta product-cta">
+      <div>
+        <p class="eyebrow">Explore AI Interview Agent</p>
+        <h2>Open the live product when you're ready to practice for a real role.</h2>
+        <p class="hint">The product page gives visitors the plain-language story before they move into the interview
+          workflow.</p>
+      </div>
+      <div class="product-cta-actions">
+        <a class="pill dark-pill" href="https://interview.dhaneshlabs.com/" target="_blank" rel="noreferrer">Launch
+          Product</a>
+        <a class="pill ghost dark-ghost" href="/products">Back to Products</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand foot-brand" href="/" aria-label="Go to home">
+      <img src="/public/assets/logo.png" alt="Dhanesh Labs logo" class="logo" />
+      <div>
+        <span class="brand-name">Dhanesh Labs</span>
+        <span class="brand-tag">Code • Create • Wander</span>
+      </div>
+    </a>
+    <div class="foot-links">
+      <a href="/">Home</a>
+      <a href="/products">Products</a>
+      <a href="/content">Content</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <p class="foot-note">© 2026 Dhanesh Gujrathi</p>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+
+</html>

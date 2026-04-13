@@ -28,6 +28,13 @@
       }
     },
     {
+      "src": "/tools(?:\\.html)?",
+      "status": 308,
+      "headers": {
+        "Location": "/products"
+      }
+    },
+    {
       "handle": "filesystem"
     },
     {
@@ -44,16 +51,6 @@
       }
     },
     {
-      "src": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "tools.dhaneshlabs.com"
-        }
-      ],
-      "dest": "/tools.html"
-    },
-    {
       "src": "/(.*)",
       "has": [
         {
@@ -61,15 +58,18 @@
           "value": "tools.dhaneshlabs.com"
         }
       ],
-      "dest": "/tools.html"
+      "status": 308,
+      "headers": {
+        "Location": "https://www.dhaneshlabs.com/products"
+      }
     },
     {
       "src": "/products/league-ledger",
       "dest": "/products/league-ledger.html"
     },
     {
-      "src": "/products/code-assistant",
-      "dest": "/products/code-assistant.html"
+      "src": "/products/ai-interview-agent",
+      "dest": "/products/ai-interview-agent.html"
     },
     {
       "src": "/products/dashboard-pro",
@@ -78,10 +78,6 @@
     {
       "src": "/products",
       "dest": "/products.html"
-    },
-    {
-      "src": "/tools",
-      "dest": "/tools.html"
     },
     {
       "src": "/content",

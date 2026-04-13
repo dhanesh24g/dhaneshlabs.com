@@ -11,15 +11,28 @@ const status = [
   'Streaming UI revamp'
 ];
 const productDrops = [
-  'Products hub structure',
+  'AI Interview Agent live',
   'League Ledger detail page',
+  'Voice interview product track',
   'Product labeling system',
   'Scalable product routing'
 ];
 const productStatus = [
-  'Products Hub',
+  'AI Interview Agent live',
   'League Ledger featured',
-  'Live and beta lineup'
+  'Live product lineup',
+  'Products Hub'
+];
+const aiInterviewAgentDrops = [
+  'Job extraction flow',
+  'TinyFish research loop',
+  'Voice interview session',
+  'Feedback report workflow'
+];
+const aiInterviewAgentStatus = [
+  'AI Interview Agent',
+  'Live interview product',
+  'Voice-ready practice'
 ];
 const leagueLedgerDrops = [
   'League setup flow',
@@ -31,16 +44,6 @@ const leagueLedgerStatus = [
   'League Ledger',
   'Payout workflow polish',
   'Settlement visibility'
-];
-const codeAssistantDrops = [
-  'Beta access flow',
-  'Review support direction',
-  'Workflow guidance shaping'
-];
-const codeAssistantStatus = [
-  'Code Assistant beta',
-  'Request access open',
-  'Beta page live'
 ];
 const dashboardProDrops = [
   'Waitlist setup',
@@ -63,22 +66,22 @@ function setDynamicBits() {
   const dateStr = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
   const pathname = window.location.pathname;
   const isProductsHub = pathname === '/products' || pathname.endsWith('/products.html');
+  const isAiInterviewAgentPage = pathname === '/products/ai-interview-agent' || pathname.endsWith('/products/ai-interview-agent.html');
   const isLeagueLedgerPage = pathname === '/products/league-ledger' || pathname.endsWith('/products/league-ledger.html');
-  const isCodeAssistantPage = pathname === '/products/code-assistant' || pathname.endsWith('/products/code-assistant.html');
   const isDashboardProPage = pathname === '/products/dashboard-pro' || pathname.endsWith('/products/dashboard-pro.html');
-  const activeDrops = isLeagueLedgerPage
+  const activeDrops = isAiInterviewAgentPage
+    ? aiInterviewAgentDrops
+    : isLeagueLedgerPage
     ? leagueLedgerDrops
-    : isCodeAssistantPage
-      ? codeAssistantDrops
       : isDashboardProPage
         ? dashboardProDrops
         : isProductsHub
           ? productDrops
           : drops;
-  const activeStatus = isLeagueLedgerPage
+  const activeStatus = isAiInterviewAgentPage
+    ? aiInterviewAgentStatus
+    : isLeagueLedgerPage
     ? leagueLedgerStatus
-    : isCodeAssistantPage
-      ? codeAssistantStatus
       : isDashboardProPage
         ? dashboardProStatus
         : isProductsHub
