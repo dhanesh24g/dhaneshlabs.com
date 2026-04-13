@@ -55,6 +55,30 @@ const dashboardProStatus = [
   'Waitlist active',
   'Planned analytics release'
 ];
+const liveActivity = [
+  'AI Interview Agent is live for role-specific practice.',
+  'League Ledger is ready for fantasy league settlements.',
+  'Product pages are trimmed to the real lineup.',
+  'Dashboard Pro planning is in progress.'
+];
+const productActivity = [
+  'AI Interview Agent is live.',
+  'League Ledger remains the live finance workflow.',
+  'Dashboard Pro is planned with a focused analytics scope.',
+  'The product hub is focused on real launches.'
+];
+const aiInterviewAgentActivity = [
+  'Job extraction to feedback is live.',
+  'Voice practice starts from the target role.',
+  'Research, question ranking, and scoring stay connected.',
+  'The live app is ready at interview.dhaneshlabs.com.'
+];
+const leagueLedgerActivity = [
+  'League payout flow is live.',
+  'Winner tracking and washouts stay in one ledger.',
+  'Settlement visibility is ready for match day.',
+  'League Ledger is live at league.dhaneshlabs.com.'
+];
 const THEME_STORAGE_KEY = 'dhaneshlabs-theme';
 
 function pick(array) { return array[Math.floor(Math.random() * array.length)]; }
@@ -62,6 +86,7 @@ function pick(array) { return array[Math.floor(Math.random() * array.length)]; }
 function setDynamicBits() {
   const latest = document.getElementById('latest-drop');
   const pill = document.getElementById('status-pill');
+  const activity = document.getElementById('live-activity-copy');
   const now = new Date();
   const dateStr = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
   const pathname = window.location.pathname;
@@ -87,8 +112,34 @@ function setDynamicBits() {
         : isProductsHub
           ? productStatus
           : status;
+  const activeActivity = isAiInterviewAgentPage
+    ? aiInterviewAgentActivity
+    : isLeagueLedgerPage
+    ? leagueLedgerActivity
+      : isProductsHub
+        ? productActivity
+        : liveActivity;
   if (latest) latest.textContent = `${pick(activeDrops)} · updated ${dateStr}`;
   if (pill) pill.textContent = pick(activeStatus);
+  if (activity) activity.textContent = pick(activeActivity);
+
+  rotateText(latest, activeDrops.map((item) => `${item} · updated ${dateStr}`));
+  rotateText(pill, activeStatus);
+  rotateText(activity, activeActivity);
+}
+
+function rotateText(element, values) {
+  if (!element || values.length < 2 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  let index = 0;
+  window.setInterval(() => {
+    index = (index + 1) % values.length;
+    element.classList.add('is-switching');
+    window.setTimeout(() => {
+      element.textContent = values[index];
+      element.classList.remove('is-switching');
+    }, 240);
+  }, 4200);
 }
 
 function handleScrollReveal() {
