@@ -1,14 +1,14 @@
 const drops = [
-  'Vision-native UI Kit',
-  'Autonomous Sprint Coach',
-  'LangGraph + Vercel starter',
+  'AI Interview Agent live',
+  'League Ledger live',
+  'Products hub cleaned up',
   'Creator Classroom: Week 2',
-  'Realtime RAG playground'
+  'Dashboard Pro planning'
 ];
 const status = [
-  'Autonomous Sprint Coach',
-  'Edge deployment checklist',
-  'Streaming UI revamp'
+  'AI Interview Agent',
+  'League Ledger',
+  'Focused product lineup'
 ];
 const productDrops = [
   'AI Interview Agent live',
