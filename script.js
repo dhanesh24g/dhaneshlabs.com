@@ -11,15 +11,28 @@ const status = [
   'Streaming UI revamp'
 ];
 const productDrops = [
-  'Products hub structure',
+  'AI Interview Agent page',
   'League Ledger detail page',
+  'Voice interview product track',
   'Product labeling system',
   'Scalable product routing'
 ];
 const productStatus = [
-  'Products Hub',
+  'AI Interview Agent featured',
   'League Ledger featured',
-  'Live and beta lineup'
+  'Live and beta lineup',
+  'Products Hub'
+];
+const aiInterviewAgentDrops = [
+  'Job extraction flow',
+  'TinyFish research loop',
+  'Voice interview session',
+  'Feedback report workflow'
+];
+const aiInterviewAgentStatus = [
+  'AI Interview Agent',
+  'Interview workflow beta',
+  'Voice-ready practice'
 ];
 const leagueLedgerDrops = [
   'League setup flow',
@@ -63,10 +76,13 @@ function setDynamicBits() {
   const dateStr = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
   const pathname = window.location.pathname;
   const isProductsHub = pathname === '/products' || pathname.endsWith('/products.html');
+  const isAiInterviewAgentPage = pathname === '/products/ai-interview-agent' || pathname.endsWith('/products/ai-interview-agent.html');
   const isLeagueLedgerPage = pathname === '/products/league-ledger' || pathname.endsWith('/products/league-ledger.html');
   const isCodeAssistantPage = pathname === '/products/code-assistant' || pathname.endsWith('/products/code-assistant.html');
   const isDashboardProPage = pathname === '/products/dashboard-pro' || pathname.endsWith('/products/dashboard-pro.html');
-  const activeDrops = isLeagueLedgerPage
+  const activeDrops = isAiInterviewAgentPage
+    ? aiInterviewAgentDrops
+    : isLeagueLedgerPage
     ? leagueLedgerDrops
     : isCodeAssistantPage
       ? codeAssistantDrops
@@ -75,7 +91,9 @@ function setDynamicBits() {
         : isProductsHub
           ? productDrops
           : drops;
-  const activeStatus = isLeagueLedgerPage
+  const activeStatus = isAiInterviewAgentPage
+    ? aiInterviewAgentStatus
+    : isLeagueLedgerPage
     ? leagueLedgerStatus
     : isCodeAssistantPage
       ? codeAssistantStatus

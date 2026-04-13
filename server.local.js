@@ -8,6 +8,7 @@ const ROOT = __dirname;
 const routeMap = {
   '/': 'index.html',
   '/products': 'products.html',
+  '/products/ai-interview-agent': 'products/ai-interview-agent.html',
   '/products/league-ledger': 'products/league-ledger.html',
   '/products/code-assistant': 'products/code-assistant.html',
   '/products/dashboard-pro': 'products/dashboard-pro.html',

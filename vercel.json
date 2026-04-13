@@ -68,6 +68,10 @@
       "dest": "/products/league-ledger.html"
     },
     {
+      "src": "/products/ai-interview-agent",
+      "dest": "/products/ai-interview-agent.html"
+    },
+    {
       "src": "/products/code-assistant",
       "dest": "/products/code-assistant.html"
     },
