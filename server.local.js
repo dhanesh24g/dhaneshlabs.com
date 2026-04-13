@@ -10,9 +10,7 @@ const routeMap = {
   '/products': 'products.html',
   '/products/ai-interview-agent': 'products/ai-interview-agent.html',
   '/products/league-ledger': 'products/league-ledger.html',
-  '/products/code-assistant': 'products/code-assistant.html',
   '/products/dashboard-pro': 'products/dashboard-pro.html',
-  '/tools': 'tools.html',
   '/content': 'content.html',
   '/contact': 'contact.html'
 };
@@ -56,11 +54,13 @@ const server = http.createServer((req, res) => {
     pathname === '/studio' ||
     pathname === '/travel' ||
     pathname === '/apps' ||
+    pathname === '/tools' ||
     pathname === '/studio.html' ||
     pathname === '/travel.html' ||
-    pathname === '/apps.html'
+    pathname === '/apps.html' ||
+    pathname === '/tools.html'
   ) {
-    res.writeHead(302, { Location: '/' });
+    res.writeHead(302, { Location: pathname.startsWith('/tools') ? '/products' : '/' });
     res.end();
     return;
   }
