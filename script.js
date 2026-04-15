@@ -97,7 +97,7 @@ function setDynamicBits() {
   const activeDrops = isAiInterviewAgentPage
     ? aiInterviewAgentDrops
     : isLeagueLedgerPage
-    ? leagueLedgerDrops
+      ? leagueLedgerDrops
       : isDashboardProPage
         ? dashboardProDrops
         : isProductsHub
@@ -106,7 +106,7 @@ function setDynamicBits() {
   const activeStatus = isAiInterviewAgentPage
     ? aiInterviewAgentStatus
     : isLeagueLedgerPage
-    ? leagueLedgerStatus
+      ? leagueLedgerStatus
       : isDashboardProPage
         ? dashboardProStatus
         : isProductsHub
@@ -115,7 +115,7 @@ function setDynamicBits() {
   const activeActivity = isAiInterviewAgentPage
     ? aiInterviewAgentActivity
     : isLeagueLedgerPage
-    ? leagueLedgerActivity
+      ? leagueLedgerActivity
       : isProductsHub
         ? productActivity
         : liveActivity;
@@ -178,7 +178,7 @@ function getPreferredTheme() {
   if (typeof window === 'undefined') return 'dark';
   const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
   if (storedTheme === 'light' || storedTheme === 'dark') return storedTheme;
-  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  return 'dark';
 }
 
 function setTheme(theme) {
